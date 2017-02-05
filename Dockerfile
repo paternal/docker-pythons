@@ -8,7 +8,8 @@ RUN \
   apt-get install -y python3 python3-dev && \
   apt-get install -y -t jessie python3.4 python3.4-dev && \
   apt-get install -y -t stretch python3.5 python3.5-dev && \
-  apt-get install -y -t experimental python3.6 python3.6-dev
+  apt-get install -y -t experimental python3.6 python3.6-dev && \
+  apt-get clean
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install tox
 
