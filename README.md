@@ -3,6 +3,11 @@ paternal/pythons
 
 A docker image with several python versions, and associated python tools.
 
+## Tags
+
+- `latest` uses the stable debian version. It is updated without notice when a new debian version is released.
+- `jessie` uses debian jessie (same as `latest` at the time I am writing this).
+
 ## Available tools
 
 - It is based on a [debian jessie](https://www.debian.org/releases/jessie/) (the stable version).
