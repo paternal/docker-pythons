@@ -6,7 +6,7 @@ A docker image with several python versions, and associated python tools.
 ## Tags
 
 - `latest` uses the stable debian version. It is updated without notice when a new debian version is released.
-- `jessie` uses debian jessie (same as `latest` at the time I am writing this).
+- `jessie` uses debian jessie.
 
 ## Available tools
 
