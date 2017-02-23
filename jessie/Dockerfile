@@ -14,6 +14,8 @@ RUN \
   apt-get clean
 RUN pip install tox
 
-RUN python --version; python3.4 --version; python3.5 --version; python3.6 --version
-RUN pypy --version; jython --version
-RUN tox --version
+# Print versions
+RUN for bin in python python2.7 python3 pyhton3.4 python3.5 python3.6 pypy jython tox \
+    do \
+      echo "$bin $(bin --version)" \
+    done
