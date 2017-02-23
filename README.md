@@ -5,10 +5,12 @@ A docker image with several python versions, and associated python tools.
 
 ## Tags
 
-- `latest` uses the stable debian version. It is updated without notice when a new debian version is released.
-- `jessie` uses debian jessie.
+- `latest`: Uses the stable debian version. It is updated without notice when a new debian version is released.
+- `jessie`/`stretch`: Uses debian jessie/stretch.
 
 ## Available tools
+
+This list describes the version available with the (default) `jessie` tag.
 
 - It is based on a [debian jessie](https://www.debian.org/releases/jessie/) (the stable version).
 - Most of the python versions packaged for debian are available, that is:
@@ -22,6 +24,7 @@ A docker image with several python versions, and associated python tools.
   - [pypy](https://packages.debian.org/jessie/pypy).
 - Some essential (to my taste) python packages are installed using pip:
   - [tox](https://pypi.python.org/pypi/tox).
+  - [pip](https://pypi.python.org/pypi/pip).
 
 ## Usage
 
