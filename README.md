@@ -19,7 +19,7 @@ This list describes the version available with the (default) `jessie` tag.
   - [python3](https://packages.debian.org/jessie/python3) (an alias to `python3.4` — see below);
   - [python3.4](https://packages.debian.org/jessie/python3.4);
   - [python3.5](https://packages.debian.org/stretch/python3.5);
-  - [python3.6](https://packages.debian.org/experimental/python3.6);
+  - [python3.6](https://packages.debian.org/sid/python3.6);
   - [jython](https://packages.debian.org/jessie/jython);
   - [pypy](https://packages.debian.org/jessie/pypy).
 - Some essential (to my taste) python packages are installed using pip:

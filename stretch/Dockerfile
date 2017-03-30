@@ -1,6 +1,6 @@
 FROM debian:stretch
 RUN echo 'APT::Default-Release "stretch";' >  /etc/apt/apt.conf.d/99default-release
-RUN echo 'deb http://httpredir.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+RUN echo 'deb http://httpredir.debian.org/debian sid main' > /etc/apt/sources.list.d/sid.list
 RUN \
   apt-get --yes update && \
   apt-get install --yes python python-pip python-dev && \
@@ -8,7 +8,7 @@ RUN \
   apt-get install --yes pypy pypy-dev && \
   apt-get install --yes jython && \
   apt-get install --yes --target-release stretch python3.5 python3.5-dev && \
-  apt-get install --yes --target-release experimental python3.6 python3.6-dev && \
+  apt-get install --yes --target-release sid python3.6 python3.6-dev && \
   apt-get clean
 RUN pip install tox
 
