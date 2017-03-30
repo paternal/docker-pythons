@@ -15,5 +15,5 @@ RUN pip install tox
 # Print versions
 RUN for bin in python python2.7 python3 python3.5 python3.6 pypy jython tox; \
     do \
-      echo "$bin $($bin --version)"; \
+      echo "$bin $($bin --version 2>&1)"; \
     done
