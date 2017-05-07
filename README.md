@@ -18,8 +18,8 @@ This list describes the version available with the (default) `latest` tag (equiv
   - [jython](https://packages.debian.org/jessie/jython);
   - [pypy](https://packages.debian.org/jessie/pypy).
 - Some essential (to my taste) python packages are installed using pip:
-  - [tox](https://pypi.python.org/pypi/tox).
-  - [pip](https://pypi.python.org/pypi/pip).
+  - [tox](https://pypi.python.org/pypi/tox);
+  - [pip](https://pypi.python.org/pypi/pip) (both for [python2](https://packages.debian.org/jessie/python-pip) and [python3](https://packages.debian.org/jessie/python3-pip)).
 
 ## Other tags
 

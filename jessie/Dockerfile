@@ -12,6 +12,7 @@ RUN \
   apt-get install --yes \
       python3 \
       python3-dev \
+      python3-pip \
       && \
   apt-get install --yes \
       pypy \
