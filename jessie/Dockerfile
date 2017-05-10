@@ -1,4 +1,6 @@
 FROM debian:jessie
+LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
+
 RUN echo 'APT::Default-Release "jessie";' >  /etc/apt/apt.conf.d/99default-release
 RUN echo 'deb http://httpredir.debian.org/debian stretch main' > /etc/apt/sources.list.d/stretch.list
 RUN echo 'deb http://httpredir.debian.org/debian sid main' > /etc/apt/sources.list.d/sid.list
