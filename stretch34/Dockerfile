@@ -1,6 +1,7 @@
 FROM paternal/pythons:stretch
 LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
 
+ARG DEBIAN_FRONTEND=noninteractive
 RUN echo 'deb http://httpredir.debian.org/debian jessie main' > /etc/apt/sources.list.d/jessie.list
 RUN \
   apt-get --yes update && \
