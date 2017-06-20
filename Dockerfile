@@ -1,1 +1,1 @@
-jessie/Dockerfile
+stretch/Dockerfile
