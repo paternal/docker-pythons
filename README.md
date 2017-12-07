@@ -14,6 +14,7 @@ This list describes the version available with the (default) `latest` tag (equiv
   - [python3](https://packages.debian.org/stretch/python3) (an alias to `python3.5` — see below);
   - [python3.5](https://packages.debian.org/stretch/python3.5);
   - [python3.6](https://packages.debian.org/buster/python3.6);
+  - [python3.7](https://packages.debian.org/sid/python3.7);
   - [jython](https://packages.debian.org/stretch/jython);
   - [pypy](https://packages.debian.org/stretch/pypy);
   - [pip](https://pypi.python.org/pypi/pip) (both for [python2](https://packages.debian.org/stretch/python-pip) and [python3](https://packages.debian.org/stretch/python3-pip)).
@@ -30,12 +31,14 @@ If you *do* need `python3.4` as well, you can use tag `stretch34` (see below).
   - [python3.4](https://packages.debian.org/jessie/python3.4);
   - [python3.5](https://packages.debian.org/stretch/python3.5);
   - [python3.6](https://packages.debian.org/buster/python3.6);
+  - [python3.7](https://packages.debian.org/sid/python3.7);
   - [jython](https://packages.debian.org/jessie/jython);
   - [pypy](https://packages.debian.org/jessie/pypy).
 - `stretch` (equivalent to `latest`): A debian stretch with:
   - [python2.7](https://packages.debian.org/stretch/python2.7);
   - [python3.5](https://packages.debian.org/stretch/python3.5);
   - [python3.6](https://packages.debian.org/buster/python3.6);
+  - [python3.7](https://packages.debian.org/sid/python3.7);
   - [jython](https://packages.debian.org/stretch/jython);
   - [pypy](https://packages.debian.org/stretch/pypy).
 - `stretch34`: Same as `stretch`:
@@ -45,6 +48,7 @@ If you *do* need `python3.4` as well, you can use tag `stretch34` (see below).
   - [python2.7](https://packages.debian.org/buster/python2.7);
   - [python3.5](https://packages.debian.org/buster/python3.5);
   - [python3.6](https://packages.debian.org/buster/python3.6);
+  - [python3.7](https://packages.debian.org/sid/python3.7);
   - [jython](https://packages.debian.org/buster/jython);
   - [pypy](https://packages.debian.org/buster/pypy).
 
