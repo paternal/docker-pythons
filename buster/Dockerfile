@@ -1,5 +1,4 @@
-FROM debian:testing
-# TODO Hard-code to buster
+FROM debian:buster
 LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
 
 ARG DEBIAN_FRONTEND=noninteractive
