@@ -36,6 +36,7 @@ RUN \
   apt-get install --yes --target-release buster \
       python3.6 \
       python3.6-dev \
+      libc6-dev \
       && \
   apt-get install --yes --target-release sid \
       python3.7 \
