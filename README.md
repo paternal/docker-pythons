@@ -25,6 +25,8 @@ If you *do* need `python3.4` as well, you can use tag `stretch34` (see below).
 
 ## Other tags
 
+Note than when installing recent python versions on old debian versions (e.g. python3.6 on debian jessie), other packages are also pulled from this newer debian version. So, althought the system you get is based on a given debian version, it can contain packages (including *core* packages like binutils or libc6) from several debian versions.
+
 - `latest`: See above.
 - `jessie`: A debian jessie with:
   - [python2.7](https://packages.debian.org/jessie/python2.7);
