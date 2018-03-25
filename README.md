@@ -54,7 +54,6 @@ Note than when installing recent python versions on old debian versions (e.g. py
   - [jython](https://packages.debian.org/buster/jython);
   - [pypy](https://packages.debian.org/buster/pypy).
 
-
 ## Usage
 
     sudo docker pull paternal/pythons
