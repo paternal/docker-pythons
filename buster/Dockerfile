@@ -21,6 +21,7 @@ RUN \
       python3.6-dev \
       && \
   apt-get install --yes --target-release sid \
+      python2 \
       python3.7 \
       python3.7-dev \
       && \

@@ -10,6 +10,7 @@ This list describes the version available with the (default) `latest` tag (equiv
 - It is based on a [debian stretch](https://www.debian.org/releases/stretch/) (the stable version), and is updated without notice when a new debian version is released.
 - Most of the python versions packaged for debian are available, that is:
   - [python](https://packages.debian.org/stretch/python) (an alias to `python2.7` — see below);
+  - [python2](https://packages.debian.org/sid/python2) (an alias to `python2.7` — see below);
   - [python2.7](https://packages.debian.org/stretch/python2.7);
   - [python3](https://packages.debian.org/stretch/python3) (an alias to `python3.5` — see below);
   - [python3.5](https://packages.debian.org/stretch/python3.5);
