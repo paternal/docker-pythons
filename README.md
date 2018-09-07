@@ -1,6 +1,9 @@
 paternal/pythons
 ================
 
+![Docker Stars](https://img.shields.io/docker/stars/paternal/pythons.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/paternal/pythons.svg)
+
 A docker image with several python versions, and associated python tools.
 
 ## Tag `latest`: Available tools
