@@ -1,8 +1,8 @@
 paternal/pythons
 ================
 
-![Docker Stars](https://img.shields.io/docker/stars/paternal/pythons.svg)
-![Docker Pulls](https://img.shields.io/docker/pulls/paternal/pythons.svg)
+![Docker Stars](https://badgen.net/docker/stars/paternal/pythons?icon=docker&label=stars)
+![Docker Pulls](https://badgen.net/docker/pulls/paternal/pythons?icon=docker&label=pulls)
 
 A docker image with several python versions, and associated python tools.
 
