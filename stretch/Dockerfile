@@ -33,14 +33,14 @@ RUN \
       && \
   apt-get install --yes --target-release sid \
       pypy3 \
-      python3.6 \
-      python3.6-dev \
+      #python3.8 \
+      #python3.8-dev \
       && \
   apt-get clean
 RUN pip install tox
 
 # Print versions
-RUN for bin in python python2 python2.7 python3 python3.5 python3.6 python3.7 pypy pypy3 jython tox; \
+RUN for bin in python python2 python2.7 python3 python3.5 python3.7 pypy pypy3 jython tox; \
     do \
       echo "$bin $($bin --version 2>&1)"; \
     done
