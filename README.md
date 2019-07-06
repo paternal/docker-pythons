@@ -25,8 +25,6 @@ This list describes the version available with the (default) `latest` tag (equiv
 - Some essential (to my taste) python packages are installed using pip:
   - [tox](https://pypi.python.org/pypi/tox).
 
-If you *do* need `python3.4` as well, you can use tag `stretch34` (see below).
-
 ## Other tags
 
 Note than when installing recent python versions on old debian versions (e.g. python3.7 on debian jessie), other packages are also pulled from this newer debian version. So, althought the system you get is based on a given debian version, it can contain packages (including *core* packages like binutils or libc6) from several debian versions.
@@ -34,7 +32,6 @@ Note than when installing recent python versions on old debian versions (e.g. py
 - `latest`: See above.
 - `jessie`: A debian jessie with:
   - [python2.7](https://packages.debian.org/jessie/python2.7);
-  - [python3.4](https://packages.debian.org/jessie/python3.4);
   - [python3.5](https://packages.debian.org/stretch/python3.5);
   - [python3.7](https://packages.debian.org/buster/python3.7);
   - [jython](https://packages.debian.org/jessie/jython);
@@ -46,9 +43,6 @@ Note than when installing recent python versions on old debian versions (e.g. py
   - [python3.7](https://packages.debian.org/sid/python3.7);
   - [jython](https://packages.debian.org/stretch/jython);
   - [pypy](https://packages.debian.org/stretch/pypy).
-- `stretch34`: Same as `stretch`:
-  - with [python3.4](https://packages.debian.org/jessie/python3.4);
-  - without [findutils](https://packages.debian.org/stretch/findutils) (an [essential](https://www.debian.org/doc/debian-policy/ch-binary.html#s3.8) package that has to be removed to install python3.4).
 - `buster`: A debian buster with:
   - [python2.7](https://packages.debian.org/buster/python2.7);
   - [python3.5](https://packages.debian.org/buster/python3.5);

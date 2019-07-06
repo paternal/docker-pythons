@@ -17,8 +17,6 @@ RUN \
       python3 \
       python3-dev \
       python3-pip \
-      python3.4 \
-      python3.4-dev \
       && \
   apt-get install --yes \
       pypy \
@@ -45,7 +43,7 @@ RUN \
 RUN pip install tox
 
 # Print versions
-RUN for bin in python python2 python2.7 python3 python3.4 python3.5 python3.7 pypy pypy3 jython tox; \
+RUN for bin in python python2 python2.7 python3 python3.5 python3.7 pypy pypy3 jython tox; \
     do \
       echo "$bin $($bin --version 2>&1)"; \
     done
