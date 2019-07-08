@@ -40,7 +40,7 @@ RUN \
 RUN pip install tox
 
 # Print versions
-RUN for bin in jython pip pip3 pypy pypy3 python python2 python2.7 python3 python3.5 python3.6 python3.7 python3.8 tox; \
+RUN for bin in jython pip pip3 pypy pypy3 python python2 python2.7 python3 python3.5 python3.7 python3.8 tox; \
     do \
       echo "$bin $($bin --version 2>&1)"; \
     done
