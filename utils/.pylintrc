@@ -1,0 +1,4 @@
+[MESSAGES CONTROL]
+disable=
+  # Let black handle formatting
+  bad-continuation,
