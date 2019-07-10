@@ -83,6 +83,8 @@ Based on a [debian buster](https://www.debian.org/releases/buster/).
     - [python3](https://packages.debian.org/buster/python3)
     - [python3-dev](https://packages.debian.org/buster/python3-dev)
     - [python3-pip](https://packages.debian.org/buster/python3-pip)
+    - [python3.5](https://packages.debian.org/stretch/python3.5)
+    - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
     - [python3.7](https://packages.debian.org/buster/python3.7)
     - [python3.7-dev](https://packages.debian.org/buster/python3.7-dev)
     - [python3.8](https://packages.debian.org/sid/python3.8)
