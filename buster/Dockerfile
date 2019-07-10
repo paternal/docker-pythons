@@ -4,7 +4,7 @@ LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
 ARG DEBIAN_FRONTEND=noninteractive
 RUN echo 'APT::Default-Release "buster";' >  /etc/apt/apt.conf.d/99default-release
 #RUN echo 'Acquire::http::proxy "http://192.168.0.34:3142";' > /etc/apt/apt.conf.d/02proxy # TODO Comment this line
-#RUN echo 'deb http://httpredir.debian.org/debian stretch main' > /etc/apt/sources.list.d/stretch.list
+RUN echo 'deb http://httpredir.debian.org/debian stretch main' > /etc/apt/sources.list.d/stretch.list
 RUN echo 'deb http://httpredir.debian.org/debian sid main' > /etc/apt/sources.list.d/sid.list
 
 
