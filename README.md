@@ -33,7 +33,7 @@ Based on a [debian jessie](https://www.debian.org/releases/jessie/).
     - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
-    - [tox](https://pypi.python.org/pypi/tox)
+    - [tox](https://pypi.python.org/pypi/tox) (installed both with python2 and python3: use `python2 -m tox` or `python3 -m tox` to choose which version to use).
 
 
 ## Tag `stretch`
@@ -62,7 +62,7 @@ Based on a [debian stretch](https://www.debian.org/releases/stretch/).
     - [python3.8-dev](https://packages.debian.org/sid/python3.8-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
-    - [tox](https://pypi.python.org/pypi/tox)
+    - [tox](https://pypi.python.org/pypi/tox) (installed both with python2 and python3: use `python2 -m tox` or `python3 -m tox` to choose which version to use).
 
 
 ## Tag `buster`
