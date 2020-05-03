@@ -120,7 +120,7 @@ Based on a [debian bullseye](https://www.debian.org/releases/bullseye/).
     - [python3.8-dev](https://packages.debian.org/sid/python3.8-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
-    - [tox](https://pypi.python.org/pypi/tox)
+    - [tox](https://pypi.python.org/pypi/tox) (installed both with python2 and python3: use `python2 -m tox` or `python3 -m tox` to choose which version to use).
 
 
 

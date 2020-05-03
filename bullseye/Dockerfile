@@ -33,7 +33,8 @@ RUN \
       python3.8-dev \
       && \
   apt-get clean
-RUN pip install tox
+RUN python2 -m pip install tox \
+  && python3 -m pip install tox
 
 # Print versions
 RUN for bin in jython pip pip3 pypy pypy3 python python2 python2.7 python3 python3.5 python3.7 python3.8 tox; \
