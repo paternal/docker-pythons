@@ -15,9 +15,12 @@ RUN \
   apt-get install --yes  \
       jython \
       pypy \
+      pypy-tk \
       pypy3 \
+      pypy3-tk \
       python \
       python-dev \
+      python-tk \
       python-pip \
       python2 \
       python2-dev \
@@ -26,6 +29,7 @@ RUN \
       python3 \
       python3-dev \
       python3-pip \
+      python3-tk \
       python3.5 \
       python3.5-dev \
       python3.7 \

@@ -15,19 +15,23 @@ RUN \
   apt-get install --yes  \
       jython \
       pypy \
+      pypy-tk \
       python \
       python-dev \
       python-pip \
+      python-tk \
       python2.7 \
       python2.7-dev \
       python3 \
       python3-dev \
       python3-pip \
+      python3-tk \
       python3.5 \
       python3.5-dev \
       && \
   apt-get install --yes --target-release buster \
       pypy3 \
+      pypy3-tk \
       python2 \
       python2-dev \
       python3.7 \
