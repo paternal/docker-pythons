@@ -8,6 +8,8 @@ A docker image with several python versions, and associated python tools.
 
 Note than when installing recent python versions on old debian versions, other packages are also pulled from this newer debian version. So, althought the system you get is based on a given debian version, it can contain packages (including *core* packages like binutils or libc6) from several debian versions.
 
+Note that the versions of packages listed here are the versions that were explicitely installed, but the actual installed version might differ. For instance, *foo* version X is explicitely installed, but when installing *bar*, *foo* version Y has been pulled as well. So, although *foo* is listed here as version X, version Y is actually installed.
+
 ## Tag `latest`
 
 The default `latest` tag is equivalent to the `stable` debian version (that is, `buster`).
