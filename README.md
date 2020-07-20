@@ -95,31 +95,31 @@ Based on a [debian buster](https://www.debian.org/releases/buster/).
 
 - Most of the python versions packaged for debian are available, that is:
     - [jython](https://packages.debian.org/buster/jython)
-    - [pypy-tk](https://packages.debian.org/buster/pypy-tk)
-    - [pypy3-tk](https://packages.debian.org/buster/pypy3-tk)
-    - [pypy3](https://packages.debian.org/buster/pypy3)
     - [pypy](https://packages.debian.org/buster/pypy)
+    - [pypy-tk](https://packages.debian.org/buster/pypy-tk)
+    - [pypy3](https://packages.debian.org/buster/pypy3)
+    - [pypy3-tk](https://packages.debian.org/buster/pypy3-tk)
+    - [python](https://packages.debian.org/buster/python)
     - [python-dev](https://packages.debian.org/buster/python-dev)
     - [python-pip](https://packages.debian.org/buster/python-pip)
     - [python-tk](https://packages.debian.org/buster/python-tk)
-    - [python2-dev](https://packages.debian.org/buster/python2-dev)
-    - [python2.7-dev](https://packages.debian.org/buster/python2.7-dev)
-    - [python2.7](https://packages.debian.org/buster/python2.7)
     - [python2](https://packages.debian.org/buster/python2)
+    - [python2-dev](https://packages.debian.org/buster/python2-dev)
+    - [python2.7](https://packages.debian.org/buster/python2.7)
+    - [python2.7-dev](https://packages.debian.org/buster/python2.7-dev)
+    - [python3](https://packages.debian.org/buster/python3)
     - [python3-dev](https://packages.debian.org/buster/python3-dev)
     - [python3-pip](https://packages.debian.org/buster/python3-pip)
     - [python3-tk](https://packages.debian.org/buster/python3-tk)
-    - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
-    - [python3.5](https://packages.debian.org/stretch/python3.5)
-    - [python3.7-dev](https://packages.debian.org/buster/python3.7-dev)
     - [python3.7](https://packages.debian.org/buster/python3.7)
-    - [python3.8-dev](https://packages.debian.org/sid/python3.8-dev)
-    - [python3.8](https://packages.debian.org/sid/python3.8)
-    - [python3](https://packages.debian.org/buster/python3)
-    - [python](https://packages.debian.org/buster/python)
+    - [python3.7-dev](https://packages.debian.org/buster/python3.7-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
-    - [tox](https://pypi.python.org/pypi/tox) (installed both with python2 and python3: use `python2 -m tox` or `python3 -m tox` to choose which version to use).
+    - [black](https://pypi.python.org/pypi/black)
+    - [coverage](https://pypi.python.org/pypi/coverage)
+    - [pycodestyle](https://pypi.python.org/pypi/pycodestyle)
+    - [pylint](https://pypi.python.org/pypi/pylint)
+    - [tox](https://pypi.python.org/pypi/tox)
 
 
 ## Tag `bullseye`
