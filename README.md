@@ -12,28 +12,37 @@ Note than when installing recent python versions on old debian versions, other p
 
 The default `latest` tag is equivalent to the `stable` debian version (that is, `buster`).
 
+
 ## Tag `jessie`
 
 Based on a [debian jessie](https://www.debian.org/releases/jessie/).
 
 - Most of the python versions packaged for debian are available, that is:
     - [jython](https://packages.debian.org/jessie/jython)
-    - [pypy-tk](https://packages.debian.org/jessie/pypy-tk)
     - [pypy](https://packages.debian.org/jessie/pypy)
+    - [pypy-tk](https://packages.debian.org/jessie/pypy-tk)
+    - [pypy3](https://packages.debian.org/buster/pypy3)
+    - [pypy3-tk](https://packages.debian.org/buster/pypy3-tk)
+    - [python](https://packages.debian.org/jessie/python)
     - [python-dev](https://packages.debian.org/jessie/python-dev)
     - [python-pip](https://packages.debian.org/jessie/python-pip)
     - [python-tk](https://packages.debian.org/jessie/python-tk)
-    - [python2.7-dev](https://packages.debian.org/jessie/python2.7-dev)
+    - [python2](https://packages.debian.org/buster/python2)
+    - [python2-dev](https://packages.debian.org/buster/python2-dev)
     - [python2.7](https://packages.debian.org/jessie/python2.7)
+    - [python2.7-dev](https://packages.debian.org/jessie/python2.7-dev)
+    - [python3](https://packages.debian.org/jessie/python3)
     - [python3-dev](https://packages.debian.org/jessie/python3-dev)
     - [python3-pip](https://packages.debian.org/jessie/python3-pip)
     - [python3-tk](https://packages.debian.org/jessie/python3-tk)
-    - [python3.4-dev](https://packages.debian.org/jessie/python3.4-dev)
     - [python3.4](https://packages.debian.org/jessie/python3.4)
-    - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
+    - [python3.4-dev](https://packages.debian.org/jessie/python3.4-dev)
     - [python3.5](https://packages.debian.org/stretch/python3.5)
-    - [python3](https://packages.debian.org/jessie/python3)
-    - [python](https://packages.debian.org/jessie/python)
+    - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
+    - [python3.8](https://packages.debian.org/bullseye/python3.8)
+    - [python3.8-dev](https://packages.debian.org/bullseye/python3.8-dev)
+    - [python3.9](https://packages.debian.org/sid/python3.9)
+    - [python3.9-dev](https://packages.debian.org/sid/python3.9-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [tox](https://pypi.python.org/pypi/tox)
