@@ -5,14 +5,15 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN echo 'APT::Default-Release "stretch";' >  /etc/apt/apt.conf.d/99default-release
 #RUN echo 'Acquire::http::proxy "http://192.168.0.34:3142";' > /etc/apt/apt.conf.d/02proxy # TODO Comment this line
 RUN echo 'deb http://httpredir.debian.org/debian buster main' > /etc/apt/sources.list.d/buster.list
+RUN echo 'deb http://httpredir.debian.org/debian jessie main' > /etc/apt/sources.list.d/jessie.list
 RUN echo 'deb http://httpredir.debian.org/debian bullseye main' > /etc/apt/sources.list.d/bullseye.list
 RUN echo 'deb http://httpredir.debian.org/debian sid main' > /etc/apt/sources.list.d/sid.list
 
 
 RUN \
-  apt-get --yes update \
+  apt update --yes \
   && \
-  apt-get install --yes  \
+  apt install --yes  \
       jython \
       pypy \
       pypy-tk \
@@ -29,7 +30,7 @@ RUN \
       python3.5 \
       python3.5-dev \
       && \
-  apt-get install --yes --target-release buster \
+  apt install --yes --target-release buster \
       pypy3 \
       pypy3-tk \
       python2 \
@@ -37,17 +38,24 @@ RUN \
       python3.7 \
       python3.7-dev \
       && \
-  apt-get install --yes --target-release bullseye \
+  apt install --yes --target-release bullseye \
       python3.8 \
       python3.8-dev \
       && \
-  apt-get clean
-RUN \
-  python2 -m pip install tox && \
-  python3 -m pip install tox
+  apt install --yes --target-release sid \
+      python3.9 \
+      python3.9-dev \
+      && \
+  apt clean
+RUN python3 -m pip install \
+  black \
+  coverage \
+  pycodestyle \
+  pylint \
+  tox
 
 # Print versions
-RUN for bin in jython pip pip3 pypy pypy3 python python2 python2.7 python3 python3.5 python3.7 python3.8 "python2 -m tox" "python3 -m tox"; \
+RUN for bin in black coverage jython pycodestyle pip pip3 pylint pypy pypy3 python python2 python2.7 python3 python3.5 python3.7 python3.8 python3.9 tox; \
     do \
       echo "$bin $($bin --version 2>&1)"; \
     done
