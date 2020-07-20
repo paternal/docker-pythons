@@ -55,6 +55,8 @@ PACKAGES = [
     "python3-dev",
     "python3-pip",
     "python3-tk",
+    "python3.4",
+    "python3.4-dev",
     "python3.5",
     "python3.5-dev",
     "python3.6",
@@ -63,17 +65,25 @@ PACKAGES = [
     "python3.7-dev",
     "python3.8",
     "python3.8-dev",
+    "python3.9",
+    "python3.9-dev",
 ]
 
-PYPI = ["tox"]
+PYPI3 = [
+        "black",
+        "coverage",
+        "pycodestyle",
+        "pylint",
+        "tox",
+        ]
 
 BIN = (
     [
         package
         for package in PACKAGES
-        if not (package.endswith("-dev") or package.endswith("-pip"))
+        if not (package.endswith("-dev") or package.endswith("-pip") or package.endswith("-tk"))
     ]
-    + PYPI
+    + PYPI3
     + ["pip", "pip3"]
 )
 
@@ -204,7 +214,7 @@ def main():
         with open(os.path.join(ROOT, codename, "Dockerfile"), "w") as dockerfile:
             dockerfile.write(
                 template.render(
-                    codename=codename, suites=installable[codename], pypi=PYPI, bin=BIN
+                    codename=codename, suites=installable[codename], pypi3=PYPI3, bin=BIN
                 )
             )
 
@@ -216,7 +226,7 @@ def main():
         readme.write(
             template.render(
                 suites=suite_package_target(installable),
-                pypi=PYPI,
+                pypi3=PYPI3,
                 stable=suite2codename["stable"],
             )
         )

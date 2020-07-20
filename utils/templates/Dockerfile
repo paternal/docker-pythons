@@ -11,17 +11,18 @@ RUN echo 'deb http://httpredir.debian.org/debian {{ suite }} main' > /etc/apt/so
 {%- endfor %}
 
 RUN \
-  apt-get --yes update \
+  apt update --yes \
   && \
   {% for suite in suites -%}
-  apt-get install --yes {% if suite != codename %}--target-release {{ suite }}{% endif %} \
+  apt install --yes {% if suite != codename %}--target-release {{ suite }}{% endif %} \
       {%- for package in suites[suite]|sort %}
       {{ package }} \
       {%- endfor %}
       && \
   {% endfor -%}
-  apt-get clean
-RUN pip install {{ pypi|sort|join(" ") }}
+  apt clean
+RUN python3 -m pip install \
+  {{ pypi3|sort|join(" \\\n  ")}}
 
 # Print versions
 RUN for bin in {{ bin|sort|join(" ") }}; \

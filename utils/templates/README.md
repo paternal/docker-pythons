@@ -26,7 +26,7 @@ Based on a [debian {{ codename }}](https://www.debian.org/releases/{{ codename }
 
 - Some essential (to my taste) python packages are installed using pip:
 
-    {%- for package in pypi %}
+    {%- for package in pypi3 %}
     - [{{ package }}](https://pypi.python.org/pypi/{{ package }})
 
     {%- endfor %}
