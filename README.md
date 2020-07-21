@@ -126,32 +126,38 @@ Based on a [debian buster](https://www.debian.org/releases/buster/).
 
 Based on a [debian bullseye](https://www.debian.org/releases/bullseye/).
 
-This image does not include the [python2 version of `pip`](https://packages.debian.org/jessie/python-pip).
-
 - Most of the python versions packaged for debian are available, that is:
     - [jython](https://packages.debian.org/bullseye/jython)
-    - [pypy-tk](https://packages.debian.org/bullseye/pypy-tk)
-    - [pypy3-tk](https://packages.debian.org/bullseye/pypy3-tk)
-    - [pypy3](https://packages.debian.org/bullseye/pypy3)
     - [pypy](https://packages.debian.org/bullseye/pypy)
+    - [pypy-tk](https://packages.debian.org/bullseye/pypy-tk)
+    - [pypy3](https://packages.debian.org/bullseye/pypy3)
+    - [pypy3-tk](https://packages.debian.org/bullseye/pypy3-tk)
+    - [python](https://packages.debian.org/bullseye/python)
     - [python-dev](https://packages.debian.org/bullseye/python-dev)
+    - [python-pip](https://packages.debian.org/bullseye/python-pip)
     - [python-tk](https://packages.debian.org/bullseye/python-tk)
-    - [python2-dev](https://packages.debian.org/bullseye/python2-dev)
-    - [python2.7-dev](https://packages.debian.org/bullseye/python2.7-dev)
-    - [python2.7](https://packages.debian.org/bullseye/python2.7)
     - [python2](https://packages.debian.org/bullseye/python2)
+    - [python2-dev](https://packages.debian.org/bullseye/python2-dev)
+    - [python2.7](https://packages.debian.org/bullseye/python2.7)
+    - [python2.7-dev](https://packages.debian.org/bullseye/python2.7-dev)
+    - [python3](https://packages.debian.org/bullseye/python3)
     - [python3-dev](https://packages.debian.org/bullseye/python3-dev)
     - [python3-pip](https://packages.debian.org/bullseye/python3-pip)
     - [python3-tk](https://packages.debian.org/bullseye/python3-tk)
-    - [python3.7-dev](https://packages.debian.org/bullseye/python3.7-dev)
-    - [python3.7](https://packages.debian.org/bullseye/python3.7)
-    - [python3.8-dev](https://packages.debian.org/sid/python3.8-dev)
-    - [python3.8](https://packages.debian.org/sid/python3.8)
-    - [python3](https://packages.debian.org/bullseye/python3)
-    - [python](https://packages.debian.org/bullseye/python)
+    - [python3.5](https://packages.debian.org/stretch/python3.5)
+    - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
+    - [python3.8](https://packages.debian.org/bullseye/python3.8)
+    - [python3.8-dev](https://packages.debian.org/bullseye/python3.8-dev)
+    - [python3.9](https://packages.debian.org/sid/python3.9)
+    - [python3.9-dev](https://packages.debian.org/sid/python3.9-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
+    - [black](https://pypi.python.org/pypi/black)
+    - [coverage](https://pypi.python.org/pypi/coverage)
+    - [pycodestyle](https://pypi.python.org/pypi/pycodestyle)
+    - [pylint](https://pypi.python.org/pypi/pylint)
     - [tox](https://pypi.python.org/pypi/tox)
+
 
 
 ## Usage
