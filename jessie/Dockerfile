@@ -18,44 +18,32 @@ RUN \
       pypy \
       pypy-tk \
       python \
-      python-dev \
       python-pip \
       python-tk \
       python2.7 \
-      python2.7-dev \
       python3 \
       python3-dev \
       python3-pip \
       python3-tk \
       python3.4 \
-      python3.4-dev \
   && \
   apt install --yes --target-release stretch \
       python3.5 \
-      python3.5-dev \
   && \
   apt install --yes --target-release bullseye \
       python3.8 \
-      python3.8-dev \
   && \
   apt install --yes --target-release sid \
       python3.9 \
-      python3.9-dev \
-  && \
-  apt install --yes --target-release buster \
-      python2 \
-      python2-dev \
-  && \
-  apt install --yes \
-      pypy3 \
-      pypy3-tk \
   && \
   apt-get clean
 RUN python3 -m pip install \
+  coverage \
+  pycodestyle \
   tox
 
 # Print versions
-RUN for bin in jython pip pip3 pypy pypy3 python python2 python2.7 python3 python3.4 python3.5 python3.6 python3.8 python3.9 tox; \
+RUN for bin in coverage jython pip pip3 pycodestyle pypy python python2 python2.7 python3 python3.4 python3.5 python3.8 python3.9 tox; \
     do \
       echo "$bin $($bin --version 2>&1)"; \
     done

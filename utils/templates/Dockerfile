@@ -20,7 +20,7 @@ RUN \
       {%- endfor %}
       && \
   {% endfor -%}
-  apt clean
+  apt-get clean
 RUN python3 -m pip install \
   {{ pypi3|sort|join(" \\\n  ")}}
 
