@@ -38,6 +38,8 @@ RELEASES = {
 }
 
 PACKAGES = [
+    "cython",
+    "cython3",
     "jython",
     "pypy",
     "pypy-tk",
