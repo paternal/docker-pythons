@@ -57,6 +57,7 @@ PACKAGES = [
     "python3-dev",
     "python3-pip",
     "python3-tk",
+    "python3-distutils",
     "python3.4",
     #"python3.4-dev",
     "python3.5",

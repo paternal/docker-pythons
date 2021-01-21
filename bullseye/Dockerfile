@@ -27,6 +27,7 @@ RUN \
       python3 \
       python3-dev \
       python3-pip \
+      python3-distutils \
       python3-tk \
       python3.8 \
   && \
@@ -35,6 +36,7 @@ RUN \
   && \
   apt install --yes --target-release sid \
       python3.9 \
+      python3.9-distutils \
   && \
   apt-get clean
 RUN python3 -m pip install \
