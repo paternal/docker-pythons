@@ -65,10 +65,13 @@ PACKAGES = [
     "python3.6",
     #"python3.6-dev",
     "python3.7",
+    "python3.7-distutils",
     #"python3.7-dev",
     "python3.8",
+    "python3.8-distutils",
     #"python3.8-dev",
     "python3.9",
+    "python3.9-distutils",
     #"python3.9-dev",
 ]
 
@@ -84,7 +87,7 @@ BIN = (
     [
         package
         for package in PACKAGES
-        if not (package.endswith("-dev") or package.endswith("-pip") or package.endswith("-tk"))
+        if not (package.endswith("-dev") or package.endswith("-pip") or package.endswith("-tk") or package.endswith("-distutils"))
     ]
     + PYPI3
     + ["pip", "pip3"]

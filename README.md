@@ -109,23 +109,25 @@ Based on a [debian buster](https://www.debian.org/releases/buster/).
 Based on a [debian bullseye](https://www.debian.org/releases/bullseye/).
 
 - Most of the python versions packaged for debian are available, that is:
+    - [cython3](https://packages.debian.org/bullseye/cython3)
+    - [cython](https://packages.debian.org/bullseye/cython)
     - [jython](https://packages.debian.org/bullseye/jython)
-    - [pypy](https://packages.debian.org/bullseye/pypy)
     - [pypy-tk](https://packages.debian.org/bullseye/pypy-tk)
-    - [pypy3](https://packages.debian.org/bullseye/pypy3)
     - [pypy3-tk](https://packages.debian.org/bullseye/pypy3-tk)
-    - [python](https://packages.debian.org/bullseye/python)
+    - [pypy3](https://packages.debian.org/bullseye/pypy3)
+    - [pypy](https://packages.debian.org/bullseye/pypy)
     - [python-pip-whl](https://packages.debian.org/bullseye/python-pip-whl)
     - [python-tk](https://packages.debian.org/bullseye/python-tk)
-    - [python2](https://packages.debian.org/bullseye/python2)
     - [python2.7](https://packages.debian.org/bullseye/python2.7)
-    - [python3](https://packages.debian.org/bullseye/python3)
+    - [python2](https://packages.debian.org/bullseye/python2)
     - [python3-dev](https://packages.debian.org/bullseye/python3-dev)
     - [python3-pip](https://packages.debian.org/bullseye/python3-pip)
     - [python3-tk](https://packages.debian.org/bullseye/python3-tk)
     - [python3.7](https://packages.debian.org/buster/python3.7)
-    - [python3.8](https://packages.debian.org/bullseye/python3.8)
-    - [python3.9](https://packages.debian.org/sid/python3.9)
+    - [python3.8](https://packages.debian.org/sid/python3.8)
+    - [python3.9-distutils](https://packages.debian.org/bullseye/python3.9-distutils)
+    - [python3.9](https://packages.debian.org/bullseye/python3.9)
+    - [python3](https://packages.debian.org/bullseye/python3)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)
