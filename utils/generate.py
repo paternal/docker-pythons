@@ -30,7 +30,6 @@ ROOT = os.path.join(os.path.dirname(__file__), os.pardir)
 TEMPLATEDIR = os.path.join(ROOT, "utils", "templates")
 
 RELEASES = {
-    8: "jessie",
     9: "stretch",
     10: "buster",
     11: "bullseye",
