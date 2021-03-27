@@ -71,10 +71,13 @@ Based on a [debian buster](https://www.debian.org/releases/buster/).
     - [python2.7](https://packages.debian.org/buster/python2.7)
     - [python3](https://packages.debian.org/buster/python3)
     - [python3-dev](https://packages.debian.org/buster/python3-dev)
+    - [python3-distutils](https://packages.debian.org/buster/python3-distutils)
     - [python3-pip](https://packages.debian.org/buster/python3-pip)
     - [python3-tk](https://packages.debian.org/buster/python3-tk)
-    - [python3.5](https://packages.debian.org/stretch/python3.5)
     - [python3.7](https://packages.debian.org/buster/python3.7)
+    - [python3.7-dev](https://packages.debian.org/buster/python3.7-dev)
+    - [python3.9](https://packages.debian.org/bullseye/python3.9)
+    - [python3.9-dev](https://packages.debian.org/bullseye/python3.9-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)
