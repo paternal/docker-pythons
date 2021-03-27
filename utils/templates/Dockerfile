@@ -1,5 +1,5 @@
 FROM debian:{{ codename }}
-LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
+LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN echo 'APT::Default-Release "{{ codename }}";' >  /etc/apt/apt.conf.d/99default-release
