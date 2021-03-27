@@ -20,6 +20,8 @@ The default `latest` tag is equivalent to the `stable` debian version (that is, 
 Based on a [debian stretch](https://www.debian.org/releases/stretch/).
 
 - Most of the python versions packaged for debian are available, that is:
+    - [cython](https://packages.debian.org/stretch/cython)
+    - [cython3](https://packages.debian.org/stretch/cython3)
     - [jython](https://packages.debian.org/stretch/jython)
     - [pypy](https://packages.debian.org/stretch/pypy)
     - [pypy-tk](https://packages.debian.org/stretch/pypy-tk)
@@ -32,12 +34,15 @@ Based on a [debian stretch](https://www.debian.org/releases/stretch/).
     - [python2.7](https://packages.debian.org/stretch/python2.7)
     - [python3](https://packages.debian.org/stretch/python3)
     - [python3-dev](https://packages.debian.org/stretch/python3-dev)
+    - [python3-distutils](https://packages.debian.org/buster/python3-distutils)
     - [python3-pip](https://packages.debian.org/stretch/python3-pip)
     - [python3-tk](https://packages.debian.org/stretch/python3-tk)
     - [python3.5](https://packages.debian.org/stretch/python3.5)
+    - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
     - [python3.7](https://packages.debian.org/buster/python3.7)
-    - [python3.8](https://packages.debian.org/bullseye/python3.8)
-    - [python3.9](https://packages.debian.org/sid/python3.9)
+    - [python3.7-dev](https://packages.debian.org/buster/python3.7-dev)
+    - [python3.9](https://packages.debian.org/bullseye/python3.9)
+    - [python3.9-dev](https://packages.debian.org/bullseye/python3.9-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)
