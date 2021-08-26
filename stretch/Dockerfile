@@ -3,7 +3,7 @@ LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN echo 'APT::Default-Release "stretch";' >  /etc/apt/apt.conf.d/99default-release
-RUN echo 'Acquire::http::proxy "http://192.168.0.34:3142";' > /etc/apt/apt.conf.d/02proxy # TODO Comment this line
+#RUN echo 'Acquire::http::proxy "http://192.168.0.34:3142";' > /etc/apt/apt.conf.d/02proxy # TODO Comment this line
 RUN echo 'deb http://httpredir.debian.org/debian buster main' > /etc/apt/sources.list.d/buster.list
 RUN echo 'deb http://httpredir.debian.org/debian bullseye main' > /etc/apt/sources.list.d/bullseye.list
 RUN echo 'deb http://httpredir.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
@@ -17,18 +17,22 @@ RUN echo >> /etc/apt/preferences
 RUN echo 'Package: *' >> /etc/apt/preferences
 RUN echo 'Pin: release a=buster' >> /etc/apt/preferences
 RUN echo 'Pin-Priority: 989' >> /etc/apt/preferences
+
 RUN echo >> /etc/apt/preferences
 RUN echo 'Package: *' >> /etc/apt/preferences
 RUN echo 'Pin: release a=bullseye' >> /etc/apt/preferences
 RUN echo 'Pin-Priority: 988' >> /etc/apt/preferences
+
 RUN echo >> /etc/apt/preferences
 RUN echo 'Package: *' >> /etc/apt/preferences
 RUN echo 'Pin: release a=bookworm' >> /etc/apt/preferences
 RUN echo 'Pin-Priority: 987' >> /etc/apt/preferences
+
 RUN echo >> /etc/apt/preferences
 RUN echo 'Package: *' >> /etc/apt/preferences
 RUN echo 'Pin: release a=sid' >> /etc/apt/preferences
 RUN echo 'Pin-Priority: 986' >> /etc/apt/preferences
+
 RUN echo >> /etc/apt/preferences
 RUN echo 'Package: *' >> /etc/apt/preferences
 RUN echo 'Pin: release a=experimental' >> /etc/apt/preferences

@@ -3,7 +3,7 @@ LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN echo 'APT::Default-Release "bookworm";' >  /etc/apt/apt.conf.d/99default-release
-RUN echo 'Acquire::http::proxy "http://192.168.0.34:3142";' > /etc/apt/apt.conf.d/02proxy # TODO Comment this line
+#RUN echo 'Acquire::http::proxy "http://192.168.0.34:3142";' > /etc/apt/apt.conf.d/02proxy # TODO Comment this line
 RUN echo 'deb http://httpredir.debian.org/debian stretch main' > /etc/apt/sources.list.d/stretch.list
 RUN echo 'deb http://httpredir.debian.org/debian buster main' > /etc/apt/sources.list.d/buster.list
 RUN echo 'deb http://httpredir.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
