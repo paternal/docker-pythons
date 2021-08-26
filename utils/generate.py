@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright 2019 Louis Paternault
+# Copyright 2019-2021 Louis Paternault
 #
 # This file is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero Public License as published by
@@ -33,25 +33,19 @@ RELEASES = {
     9: "stretch",
     10: "buster",
     11: "bullseye",
-    float("inf"): "sid",
+    12: "bookworm",
+    #13: "trixie",
 }
+RELEASES[max(RELEASES)+1] = "sid"
+RELEASES[max(RELEASES)+2] = "experimental"
 
 PACKAGES = [
-    "cython",
     "cython3",
     "jython",
     "pypy",
     "pypy-tk",
     "pypy3",
     "pypy3-tk",
-    "python",
-    #"python-dev",
-    "python-pip",
-    "python-tk",
-    "python2",
-    #"python2-dev",
-    "python2.7",
-    #"python2.7-dev",
     "python3",
     "python3-dev",
     "python3-pip",
@@ -72,6 +66,9 @@ PACKAGES = [
     "python3.9",
     "python3.9-distutils",
     "python3.9-dev",
+    "python3.10",
+    "python3.10-distutils",
+    "python3.10-dev",
 ]
 
 PYPI3 = [
@@ -89,7 +86,7 @@ BIN = (
         if not (package.endswith("-dev") or package.endswith("-pip") or package.endswith("-tk") or package.endswith("-distutils"))
     ]
     + PYPI3
-    + ["pip", "pip3"]
+    + ["pip3"]
 )
 
 
@@ -184,7 +181,7 @@ def get_installable(suite2codename):
     installable = {}
     packages = get_packages(suite2codename)
     for codename in RELEASES.values():
-        if codename == "sid":
+        if codename in ("sid", "experimental"):
             continue
         installable[codename] = collections.defaultdict(list)
         for package in packages:
@@ -219,7 +216,11 @@ def main():
         with open(os.path.join(ROOT, codename, "Dockerfile"), "w") as dockerfile:
             dockerfile.write(
                 template.render(
-                    codename=codename, suites=installable[codename], pypi3=PYPI3, bin=BIN
+                    codename=codename,
+                    suites=installable[codename],
+                    pypi3=PYPI3,
+                    bin=BIN,
+                    number2codenames=RELEASES,
                 )
             )
 

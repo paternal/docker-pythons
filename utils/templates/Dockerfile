@@ -10,6 +10,19 @@ RUN echo 'deb http://httpredir.debian.org/debian {{ suite }} main' > /etc/apt/so
 {% endif %}
 {%- endfor %}
 
+RUN echo 'Package: *' >> /etc/apt/preferences
+RUN echo 'Pin: release a={{ codename }}' >> /etc/apt/preferences
+RUN echo 'Pin-Priority: 999' >> /etc/apt/preferences
+
+{% for number in number2codenames.keys()|sort -%}
+{% if number2codenames[number] != codename %}
+RUN echo >> /etc/apt/preferences
+RUN echo 'Package: *' >> /etc/apt/preferences
+RUN echo 'Pin: release a={{ number2codenames[number] }}' >> /etc/apt/preferences
+RUN echo 'Pin-Priority: {{ 999 - number }}' >> /etc/apt/preferences
+{% endif %}
+{%- endfor %}
+
 RUN \
   apt update --yes \
   && \
@@ -21,6 +34,8 @@ RUN \
       && \
   {% endfor -%}
   apt-get clean
+
+RUN python3 -m pip install -U pip setuptools
 RUN python3 -m pip install \
   {{ pypi3|sort|join(" \\\n  ")}}
 
