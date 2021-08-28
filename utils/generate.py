@@ -35,10 +35,10 @@ RELEASES = {
     10: "buster",
     11: "bullseye",
     12: "bookworm",
-    #13: "trixie",
+    # 13: "trixie",
 }
-RELEASES[max(RELEASES)+1] = "sid"
-RELEASES[max(RELEASES)+2] = "experimental"
+RELEASES[max(RELEASES) + 1] = "sid"
+RELEASES[max(RELEASES) + 2] = "experimental"
 
 PACKAGES = [
     "cython3",
@@ -73,18 +73,23 @@ PACKAGES = [
 ]
 
 PYPI3 = [
-        "black",
-        "coverage",
-        "pycodestyle",
-        "pylint",
-        "tox",
-        ]
+    "black",
+    "coverage",
+    "pycodestyle",
+    "pylint",
+    "tox",
+]
 
 BIN = (
     [
         package
         for package in PACKAGES
-        if not (package.endswith("-dev") or package.endswith("-pip") or package.endswith("-tk") or package.endswith("-distutils"))
+        if not (
+            package.endswith("-dev")
+            or package.endswith("-pip")
+            or package.endswith("-tk")
+            or package.endswith("-distutils")
+        )
     ]
     + PYPI3
     + ["pip3"]
@@ -211,17 +216,17 @@ def main():
 
     # Generate Dockerfiles
     templates = {
-            path.relative_to(TEMPLATEDIR): jinja2.Environment(
-                loader=jinja2.FileSystemLoader(TEMPLATEDIR)
-                ).get_template(str(path.relative_to(TEMPLATEDIR)))
-            for path in TEMPLATEDIR.glob("**/*")
-            if (
-                path.is_file()
-                and not path.match(".*")
-                and not path.match("*~")
-                and not path.name == "README.md"
-                )
-            }
+        path.relative_to(TEMPLATEDIR): jinja2.Environment(
+            loader=jinja2.FileSystemLoader(TEMPLATEDIR)
+        ).get_template(str(path.relative_to(TEMPLATEDIR)))
+        for path in TEMPLATEDIR.glob("**/*")
+        if (
+            path.is_file()
+            and not path.match(".*")
+            and not path.match("*~")
+            and not path.name == "README.md"
+        )
+    }
     for filename, template in templates.items():
         for codename in installable:
             dest = ROOT / codename / filename
