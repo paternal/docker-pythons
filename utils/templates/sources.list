@@ -1,0 +1,5 @@
+{% for suite in suites -%}
+{% if suite != codename -%}
+deb http://httpredir.debian.org/debian {{ suite }} main
+{% endif %}
+{%- endfor %}

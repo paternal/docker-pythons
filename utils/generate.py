@@ -20,14 +20,15 @@
 import collections
 import json
 import os
+import pathlib
 import sys
 import time
 import urllib.request
 
 import jinja2
 
-ROOT = os.path.join(os.path.dirname(__file__), os.pardir)
-TEMPLATEDIR = os.path.join(ROOT, "utils", "templates")
+ROOT = pathlib.Path(__file__).parent.parent
+TEMPLATEDIR = ROOT / "utils" / "templates"
 
 RELEASES = {
     9: "stretch",
@@ -209,20 +210,32 @@ def main():
     installable = get_installable(suite2codename)
 
     # Generate Dockerfiles
-    template = jinja2.Environment(
-        loader=jinja2.FileSystemLoader(TEMPLATEDIR)
-    ).get_template("Dockerfile")
-    for codename in installable:
-        with open(os.path.join(ROOT, codename, "Dockerfile"), "w") as dockerfile:
-            dockerfile.write(
-                template.render(
-                    codename=codename,
-                    suites=installable[codename],
-                    pypi3=PYPI3,
-                    bin=BIN,
-                    number2codenames=RELEASES,
+    templates = {
+            path.relative_to(TEMPLATEDIR): jinja2.Environment(
+                loader=jinja2.FileSystemLoader(TEMPLATEDIR)
+                ).get_template(str(path.relative_to(TEMPLATEDIR)))
+            for path in TEMPLATEDIR.glob("**/*")
+            if (
+                path.is_file()
+                and not path.match(".*")
+                and not path.match("*~")
+                and not path.name == "README.md"
                 )
-            )
+            }
+    for filename, template in templates.items():
+        for codename in installable:
+            dest = ROOT / codename / filename
+            dest.parent.mkdir(exist_ok=True)
+            with open(dest, "w") as destfileobject:
+                destfileobject.write(
+                    template.render(
+                        codename=codename,
+                        suites=installable[codename],
+                        pypi3=PYPI3,
+                        bin=BIN,
+                        number2codenames=RELEASES,
+                    )
+                )
 
     # Generate README
     template = jinja2.Environment(
