@@ -19,7 +19,7 @@ The default `latest` tag is equivalent to the `stable` debian version (that is, 
 
 Based on a [debian stretch](https://www.debian.org/releases/stretch/).
 
-- Most of the python versions packaged for debian are available, that is:
+- Here are the python versions packaged for debian:
     - [cython3](https://packages.debian.org/stretch/cython3)
     - [jython](https://packages.debian.org/stretch/jython)
     - [pypy](https://packages.debian.org/stretch/pypy)
@@ -35,6 +35,10 @@ Based on a [debian stretch](https://www.debian.org/releases/stretch/).
     - [python3.5-dev](https://packages.debian.org/stretch/python3.5-dev)
     - [python3.7](https://packages.debian.org/buster/python3.7)
     - [python3.7-dev](https://packages.debian.org/buster/python3.7-dev)
+    - [python3.9](https://packages.debian.org/bullseye/python3.9)
+    - [python3.9-dev](https://packages.debian.org/bullseye/python3.9-dev)
+    - [python3.10](https://packages.debian.org/bookworm/python3.10)
+    - [python3.10-dev](https://packages.debian.org/bookworm/python3.10-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)
@@ -48,7 +52,7 @@ Based on a [debian stretch](https://www.debian.org/releases/stretch/).
 
 Based on a [debian buster](https://www.debian.org/releases/buster/).
 
-- Most of the python versions packaged for debian are available, that is:
+- Here are the python versions packaged for debian:
     - [cython3](https://packages.debian.org/buster/cython3)
     - [jython](https://packages.debian.org/buster/jython)
     - [pypy](https://packages.debian.org/buster/pypy)
@@ -62,10 +66,6 @@ Based on a [debian buster](https://www.debian.org/releases/buster/).
     - [python3-tk](https://packages.debian.org/buster/python3-tk)
     - [python3.7](https://packages.debian.org/buster/python3.7)
     - [python3.7-dev](https://packages.debian.org/buster/python3.7-dev)
-    - [python3.9](https://packages.debian.org/bullseye/python3.9)
-    - [python3.9-dev](https://packages.debian.org/bullseye/python3.9-dev)
-    - [python3.10](https://packages.debian.org/experimental/python3.10)
-    - [python3.10-dev](https://packages.debian.org/experimental/python3.10-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)
@@ -79,7 +79,7 @@ Based on a [debian buster](https://www.debian.org/releases/buster/).
 
 Based on a [debian bullseye](https://www.debian.org/releases/bullseye/).
 
-- Most of the python versions packaged for debian are available, that is:
+- Here are the python versions packaged for debian:
     - [cython3](https://packages.debian.org/bullseye/cython3)
     - [jython](https://packages.debian.org/bullseye/jython)
     - [pypy](https://packages.debian.org/bullseye/pypy)
@@ -93,8 +93,8 @@ Based on a [debian bullseye](https://www.debian.org/releases/bullseye/).
     - [python3-tk](https://packages.debian.org/bullseye/python3-tk)
     - [python3.9](https://packages.debian.org/bullseye/python3.9)
     - [python3.9-dev](https://packages.debian.org/bullseye/python3.9-dev)
-    - [python3.10](https://packages.debian.org/experimental/python3.10)
-    - [python3.10-dev](https://packages.debian.org/experimental/python3.10-dev)
+    - [python3.10](https://packages.debian.org/bookworm/python3.10)
+    - [python3.10-dev](https://packages.debian.org/bookworm/python3.10-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)
@@ -108,7 +108,7 @@ Based on a [debian bullseye](https://www.debian.org/releases/bullseye/).
 
 Based on a [debian bookworm](https://www.debian.org/releases/bookworm/).
 
-- Most of the python versions packaged for debian are available, that is:
+- Here are the python versions packaged for debian:
     - [cython3](https://packages.debian.org/bookworm/cython3)
     - [jython](https://packages.debian.org/bookworm/jython)
     - [pypy](https://packages.debian.org/bookworm/pypy)
@@ -122,8 +122,8 @@ Based on a [debian bookworm](https://www.debian.org/releases/bookworm/).
     - [python3-tk](https://packages.debian.org/bookworm/python3-tk)
     - [python3.9](https://packages.debian.org/bookworm/python3.9)
     - [python3.9-dev](https://packages.debian.org/bookworm/python3.9-dev)
-    - [python3.10](https://packages.debian.org/experimental/python3.10)
-    - [python3.10-dev](https://packages.debian.org/experimental/python3.10-dev)
+    - [python3.10](https://packages.debian.org/bookworm/python3.10)
+    - [python3.10-dev](https://packages.debian.org/bookworm/python3.10-dev)
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)

@@ -19,7 +19,7 @@ The default `latest` tag is equivalent to the `stable` debian version (that is, 
 
 Based on a [debian {{ codename }}](https://www.debian.org/releases/{{ codename }}/).
 
-- Most of the python versions packaged for debian are available, that is:
+- Here are the python versions packaged for debian:
 
     {%- for package in suites[codename]|sort %}
     - [{{ package }}](https://packages.debian.org/{{ suites[codename][package] }}/{{ package }})
