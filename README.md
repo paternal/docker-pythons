@@ -6,6 +6,8 @@ paternal/pythons
 
 A docker image with several python versions, and associated python tools.
 
+Most of the images use python versions packaged for Debian, excepted the tag `source`, where python binaries has been compiled from source.
+
 Note than when installing recent python versions on old debian versions, other packages are also pulled from this newer debian version. So, althought the system you get is based on a given debian version, it can contain packages (including *core* packages like binutils or libc6) from several debian versions.
 
 Note that the versions of packages listed here are the versions that were explicitely installed, but the actual installed version might differ. For instance, *foo* version X is explicitely installed, but when installing *bar*, *foo* version Y has been pulled as well. So, although *foo* is listed here as version X, version Y is actually installed.
@@ -124,6 +126,31 @@ Based on a [debian bookworm](https://www.debian.org/releases/bookworm/).
     - [python3.9-dev](https://packages.debian.org/bookworm/python3.9-dev)
     - [python3.10](https://packages.debian.org/bookworm/python3.10)
     - [python3.10-dev](https://packages.debian.org/bookworm/python3.10-dev)
+
+- Some essential (to my taste) python packages are installed using pip:
+    - [black](https://pypi.python.org/pypi/black)
+    - [coverage](https://pypi.python.org/pypi/coverage)
+    - [pycodestyle](https://pypi.python.org/pypi/pycodestyle)
+    - [pylint](https://pypi.python.org/pypi/pylint)
+    - [tox](https://pypi.python.org/pypi/tox)
+
+
+## Tag `source`
+
+Based on a [debian stable](https://www.debian.org/releases/stable/).
+
+- Python binaries have been compiled from source.
+  - python2.7.18
+  - python3.6.15
+  - python3.7.12
+  - python3.8.12
+  - python3.9.10
+  - python3.10.2
+  - python3.11.0a4
+  - pypy2.7-v7.3.6
+  - pypy3.7-v7.3.7
+  - pypy3.8-v7.3.7
+  - jython-2.7.2
 
 - Some essential (to my taste) python packages are installed using pip:
     - [black](https://pypi.python.org/pypi/black)
