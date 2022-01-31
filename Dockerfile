@@ -103,18 +103,6 @@ RUN \
   && cd .. \
   && rm -fr Python*
 
-# Python3.10
-RUN \
-  wget $PYTHON310 \
-  && tar -xf Python*.tar.xz \
-  && cd Python-* \
-  && ./configure --enable-optimizations --prefix=/usr/local \
-  && make \
-  # Python3.10 is the stable Python version, hence `make install` instead of `make altinstall`. \
-  && make install \
-  && cd .. \
-  && rm -fr Python*
-
 # Python3.11
 RUN \
   wget $PYTHON311 \
@@ -123,6 +111,19 @@ RUN \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   && make altinstall \
+  && cd .. \
+  && rm -fr Python*
+
+# Python3.10
+# The "stable" Python version is installed last, so that some of its tools are not replaced by non-stable ones.
+RUN \
+  wget $PYTHON310 \
+  && tar -xf Python*.tar.xz \
+  && cd Python-* \
+  && ./configure --enable-optimizations --prefix=/usr/local \
+  && make \
+  # Python3.10 is the stable Python version, hence `make install` instead of `make altinstall`. \
+  && make install \
   && cd .. \
   && rm -fr Python*
 
