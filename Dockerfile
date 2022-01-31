@@ -14,6 +14,9 @@ ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.7-linux64.tar.bz2
 ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.7-linux64.tar.bz2
 ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.2/jython-installer-2.7.2.jar
 
+# Packages installed for every python version
+ARG PACKAGES="pip wheel setuptools"
+
 ################################################################################
 # Install compilation tools
 
@@ -139,7 +142,7 @@ RUN \
      python3.11 \
    ; do \
      $python -m ensurepip; \
-     $python -m pip install -U pip setuptools; \
+     $python -m pip install -U $PACKAGES; \
    done
 
 ################################################################################
