@@ -21,16 +21,25 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN \
   apt update --yes && apt install --yes \
-    wget \
     build-essential \
+    gdb \
+    lcov \
     libbz2-dev \
     libffi-dev \
+    libgdbm-compat-dev \
     libgdbm-dev \
+    liblzma-dev \
     libncurses5-dev \
     libnss3-dev \
-    libreadline-dev \
+    libreadline6-dev \
     libsqlite3-dev \
     libssl-dev \
+    lzma \
+    lzma-dev \
+    pkg-config \
+    tk-dev \
+    uuid-dev \
+    wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
