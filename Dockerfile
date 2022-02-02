@@ -51,120 +51,129 @@ RUN \
 
 # Python2.7
 RUN \
-  wget $PYTHON27 \
-  && tar -xf Python-*.tar.xz \
-  && cd Python-* \
+  cd ~ \
+  && wget $PYTHON27 \
+  && tar -xf Python*.tar.xz \
+  && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   && make altinstall \
   && cd .. \
   && rm Python* -fr \
   && ln -s /usr/local/bin/python2.7 /usr/local/bin/python \
-  && ln -s /usr/local/bin/python2.7 /usr/local/bin/python2
+  && ln -s /usr/local/bin/python2.7 /usr/local/bin/python2 \
+  && python2.7 -m ensurepip \
+  && python2.7 -m pip install -U $PACKAGES
 
 # Python3.6
 RUN \
-  wget $PYTHON36 \
+  cd ~ \
+  && wget $PYTHON36 \
   && tar -xf Python*.tar.xz \
-  && cd Python-* \
+  && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   && make altinstall \
   && cd .. \
-  && rm -fr Python*
+  && rm -fr Python* \
+  && python3.6 -m ensurepip \
+  && python3.6 -m pip install -U $PACKAGES
 
 # Python3.7
 RUN \
-  wget $PYTHON37 \
+  cd ~ \
+  && wget $PYTHON37 \
   && tar -xf Python*.tar.xz \
-  && cd Python-* \
+  && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   && make altinstall \
   && cd .. \
-  && rm -fr Python*
+  && rm -fr Python* \
+  && python3.7 -m ensurepip \
+  && python3.7 -m pip install -U $PACKAGES
 
 # Python3.8
 RUN \
-  wget $PYTHON38 \
+  cd ~ \
+  && wget $PYTHON38 \
   && tar -xf Python*.tar.xz \
-  && cd Python-* \
+  && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   && make altinstall \
   && cd .. \
-  && rm -fr Python*
+  && rm -fr Python* \
+  && python3.8 -m ensurepip \
+  && python3.8 -m pip install -U $PACKAGES
 
 # Python3.9
 RUN \
-  wget $PYTHON39 \
+  cd ~ \
+  && wget $PYTHON39 \
   && tar -xf Python*.tar.xz \
-  && cd Python-* \
+  && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   && make altinstall \
   && cd .. \
-  && rm -fr Python*
+  && rm -fr Python* \
+  && python3.9 -m ensurepip \
+  && python3.9 -m pip install -U $PACKAGES
 
 # Python3.11
 RUN \
-  wget $PYTHON311 \
+  cd ~ \
+  && wget $PYTHON311 \
   && tar -xf Python*.tar.xz \
-  && cd Python-* \
+  && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   && make altinstall \
   && cd .. \
-  && rm -fr Python*
+  && rm -fr Python* \
+  && python3.11 -m ensurepip \
+  && python3.11 -m pip install -U $PACKAGES
 
 # Python3.10
 # The "stable" Python version is installed last, so that some of its tools are not replaced by non-stable ones.
 RUN \
-  wget $PYTHON310 \
+  cd ~ \
+  && wget $PYTHON310 \
   && tar -xf Python*.tar.xz \
-  && cd Python-* \
+  && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
   # Python3.10 is the stable Python version, hence `make install` instead of `make altinstall`. \
   && make install \
   && cd .. \
-  && rm -fr Python*
-
-# Pip
-RUN \
-   for python in \
-     python2.7 \
-     python3.6 \
-     python3.7 \
-     python3.8 \
-     python3.9 \
-     python3.10 \
-     python3.11 \
-   ; do \
-     $python -m ensurepip; \
-     $python -m pip install -U $PACKAGES; \
-   done
+  && rm -fr Python* \
+  && python3.10 -m ensurepip \
+  && python3.10 -m pip install -U $PACKAGES
 
 ################################################################################
 # Pypy
 
 # Pypy2.7
 RUN \
-  wget $PYPY27 \
+  cd ~ \
+  && wget $PYPY27 \
   && tar -xf pypy*bz2 \
   && rm pypy*bz2 \
   && mv pypy* /opt
 
 # Pypy3.7
 RUN \
-  wget $PYPY37 \
+  cd ~ \
+  && wget $PYPY37 \
   && tar -xf pypy*bz2 \
   && rm pypy*bz2 \
   && mv pypy* /opt
 
 # Pypy3.8
 RUN \
-  wget $PYPY38 \
+  cd ~ \
+  && wget $PYPY38 \
   && tar -xf pypy*bz2 \
   && rm pypy*bz2 \
   && mv pypy* /opt
@@ -189,13 +198,14 @@ RUN \
 RUN \
   apt update --yes && apt install --yes openjdk-17-jre \
   && rm -rf /var/lib/apt/lists/* \
+  && cd ~ \
   && wget $JYTHON \
   && java -jar jython-installer*.jar --silent --type standard --directory /opt/jython \
   && rm jython-installer*.jar \
   && ln -s /opt/jython/bin/jython /usr/local/bin/
 
 ################################################################################
-# Install pip3 packages
+# Install python3 packages
 
 RUN python3 -m pip install \
   black \
