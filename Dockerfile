@@ -2,6 +2,7 @@ FROM debian
 LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 
 # Define download URLS
+# Python https://www.python.org/downloads/
 ARG PYTHON27=https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz
 ARG PYTHON36=https://www.python.org/ftp/python/3.6.15/Python-3.6.15.tar.xz
 ARG PYTHON37=https://www.python.org/ftp/python/3.7.12/Python-3.7.12.tar.xz
