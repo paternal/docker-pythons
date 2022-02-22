@@ -9,9 +9,12 @@ ARG PYTHON38=https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tar.xz
 ARG PYTHON39=https://www.python.org/ftp/python/3.9.10/Python-3.9.10.tar.xz
 ARG PYTHON310=https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tar.xz
 ARG PYTHON311=https://www.python.org/ftp/python/3.11.0/Python-3.11.0a4.tar.xz
-ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.6-linux64.tar.bz2
-ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.7-linux64.tar.bz2
-ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.7-linux64.tar.bz2
+# Pypy https://www.pypy.org/download.html
+ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.8-linux64.tar.bz2
+ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.8-linux64.tar.bz2
+ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.8-linux64.tar.bz2
+ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.8-linux64.tar.bz2
+# Jython https://www.jython.org/download
 ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.2/jython-installer-2.7.2.jar
 
 # Packages installed for every python version
@@ -178,15 +181,23 @@ RUN \
   && rm pypy*bz2 \
   && mv pypy* /opt
 
+# Pypy3.9
+RUN \
+  cd ~ \
+  && wget $PYPY39 \
+  && tar -xf pypy*bz2 \
+  && rm pypy*bz2 \
+  && mv pypy* /opt
+
 # Pypy symlinks
 RUN \
-  for version in 3.8 3.7; \
+  for version in 3.7 3.8 3.9; \
   do \
     ln -s /opt/pypy${version}*/bin/pypy${version} /usr/local/bin; \
     pypy${version} -m ensurepip; \
     pypy${version} -m pip install -U pip setuptools; \
   done; \
-  ln -s /usr/local/bin/pypy3.8 /usr/local/bin/pypy3
+  ln -s /usr/local/bin/pypy3.9 /usr/local/bin/pypy3
 
 RUN \
   ln -s /opt/pypy2.7*/bin/pypy /usr/local/bin \
@@ -232,6 +243,7 @@ RUN for bin in \
     pypy3 \
     pypy3.7 \
     pypy3.8 \
+    pypy3.9 \
     black \
     coverage \
     pip \

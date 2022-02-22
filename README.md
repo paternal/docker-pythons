@@ -28,7 +28,8 @@ This image is Debian stable, with the following Python versions compiled from so
 - [Pypy](https://www.pypy.org/download.html):
   2.7,
   3.7,
-  3.8.
+  3.8,
+  3.9.
 - [Jython](https://www.jython.org/download):
   2.7.
 - Some python packages are installed using pip3:
