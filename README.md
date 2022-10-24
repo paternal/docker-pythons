@@ -39,6 +39,8 @@ This image is Debian stable, with the following Python versions compiled from so
   [pylint](https://pypi.python.org/pypi/pylint)
   [tox](https://pypi.python.org/pypi/tox)
 
+Missing a tool? Contact me to add any Python package from the [Python Packaging Authority](https://github.com/pypa/), the [Python Software Foundation](https://github.com/psf/), or [Python Code Quality Authority](https://github.com/PyCQA/).
+
 The accurate versions of each tools (excepted thoses installed using pip3) is available at the start of the [Dockerfile](https://framagit.org/spalax/docker-pythons/-/blob/main/Dockerfile).
 
 I try to keep the tools here up-to-date. However, if a new version of whatever binary is installed here is available, and I did not update this Docker image, please contact me ([issue tracker](https://framagit.org/spalax/docker-pythons/-/issues) or mail at the beginning of the [Dockerfile](https://framagit.org/spalax/docker-pythons/-/blob/main/Dockerfile)).
