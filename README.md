@@ -6,7 +6,7 @@ paternal/pythons
 
 A docker image with several python versions, and associated python tools.
 
-> ⚠ Warning: If you were using those images before february 2022, be aware that the way Python versions are installed are installed have changed.
+> ⚠ Warning: If you were using those images before february 2022, be aware that the way Python versions are installed have changed.
 >
 > - Before: Python was installed using apt (which was a mess).
 > - Now: Python is compiled from source.
@@ -24,7 +24,8 @@ This image is Debian stable, with the following Python versions compiled from so
   3.8,
   3.9,
   3.10,
-  3.11.
+  3.11,
+  3.12.
 - [Pypy](https://www.pypy.org/download.html):
   2.7,
   3.7,
@@ -43,7 +44,8 @@ Missing a tool? Contact me to add any Python package from the [Python Packaging 
 
 The accurate versions of each tools (excepted thoses installed using pip3) is available at the start of the [Dockerfile](https://framagit.org/spalax/docker-pythons/-/blob/main/Dockerfile).
 
-I try to keep the tools here up-to-date. However, if a new version of whatever binary is installed here is available, and I did not update this Docker image, please contact me ([issue tracker](https://framagit.org/spalax/docker-pythons/-/issues) or mail at the beginning of the [Dockerfile](https://framagit.org/spalax/docker-pythons/-/blob/main/Dockerfile)).
+I try to keep the tools here up-to-date: when a new python or Debian version is available, this image is updated soon after, without notice.
+However, if a new version of whatever binary is installed here is available, and I did not update this Docker image yet, please contact me ([issue tracker](https://framagit.org/spalax/docker-pythons/-/issues) or mail at the beginning of the [Dockerfile](https://framagit.org/spalax/docker-pythons/-/blob/main/Dockerfile)).
 
 ## Usage
 
