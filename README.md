@@ -12,8 +12,6 @@ A docker image with several python versions, and associated python tools.
 > - Now: Python is compiled from source.
 >
 > The result is that *more* Python versions are now installed.
->
-> The old images are still available using the old tags (`stretch`, `buster`, `bullseye`, `bookworm`), but they will be removed some day without notice.
 
 This image is Debian stable, with the following Python versions compiled from source:
 
