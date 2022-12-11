@@ -5,17 +5,17 @@ LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 # Python https://www.python.org/downloads/source/
 ARG PYTHON27=https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz
 ARG PYTHON36=https://www.python.org/ftp/python/3.6.15/Python-3.6.15.tar.xz
-ARG PYTHON37=https://www.python.org/ftp/python/3.7.15/Python-3.7.15.tar.xz
-ARG PYTHON38=https://www.python.org/ftp/python/3.8.15/Python-3.8.15.tar.xz
-ARG PYTHON39=https://www.python.org/ftp/python/3.9.15/Python-3.9.15.tar.xz
-ARG PYTHON310=https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tar.xz
-ARG PYTHON311=https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tar.xz
-ARG PYTHON312=https://www.python.org/ftp/python/3.12.0/Python-3.12.0a1.tar.xz
+ARG PYTHON37=https://www.python.org/ftp/python/3.7.16/Python-3.7.16.tar.xz
+ARG PYTHON38=https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz
+ARG PYTHON39=https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tar.xz
+ARG PYTHON310=https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tar.xz
+ARG PYTHON311=https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tar.xz
+ARG PYTHON312=https://www.python.org/ftp/python/3.12.0/Python-3.12.0a3.tar.xz
 # Pypy https://www.pypy.org/download.html
-ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.9-linux64.tar.bz2
+ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.10-linux64.tar.bz2
 ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.9-linux64.tar.bz2
-ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.9-linux64.tar.bz2
-ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.9-linux64.tar.bz2
+ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.10-linux64.tar.bz2
+ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.10-linux64.tar.bz2
 # Jython https://www.jython.org/download
 ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.3/jython-installer-2.7.3.jar
 
