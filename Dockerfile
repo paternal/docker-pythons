@@ -255,6 +255,7 @@ RUN for bin in \
     python3.9 \
     python3.10 \
     python3.11 \
+    python3.12 \
     jython \
     pypy \
     pypy3 \
