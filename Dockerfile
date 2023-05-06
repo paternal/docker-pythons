@@ -237,6 +237,8 @@ RUN \
 
 # When PEP 668 strikes, use `pip install --break-system-packages`
 # https://peps.python.org/pep-0668/
+# This should not be necessary:
+# https://pythonspeed.com/articles/externally-managed-environment-pep-668/
 RUN python3 -m pip install \
   black \
   coverage \
