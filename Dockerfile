@@ -9,7 +9,7 @@ ARG PYTHON38=https://www.python.org/ftp/python/3.8.17/Python-3.8.17.tar.xz
 ARG PYTHON39=https://www.python.org/ftp/python/3.9.17/Python-3.9.17.tar.xz
 ARG PYTHON310=https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tar.xz
 ARG PYTHON311=https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tar.xz
-ARG PYTHON312=https://www.python.org/ftp/python/3.12.0/Python-3.12.0b2.tar.xz
+ARG PYTHON312=https://www.python.org/ftp/python/3.12.0/Python-3.12.0b3.tar.xz
 # Pypy https://www.pypy.org/download.html
 ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.12-linux64.tar.bz2
 ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.9-linux64.tar.bz2
