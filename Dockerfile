@@ -8,14 +8,15 @@ ARG PYTHON37=https://www.python.org/ftp/python/3.7.17/Python-3.7.17.tar.xz
 ARG PYTHON38=https://www.python.org/ftp/python/3.8.18/Python-3.8.18.tar.xz
 ARG PYTHON39=https://www.python.org/ftp/python/3.9.18/Python-3.9.18.tar.xz
 ARG PYTHON310=https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tar.xz
-ARG PYTHON311=https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tar.xz
-ARG PYTHON312=https://www.python.org/ftp/python/3.12.0/Python-3.12.0rc2.tar.xz
+ARG PYTHON311=https://www.python.org/ftp/python/3.11.6/Python-3.11.6.tar.xz
+ARG PYTHON312=https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tar.xz
+ARG PYTHON313=https://www.python.org/ftp/python/3.13.0/Python-3.13.0a1.tar.xz
 # Pypy https://www.pypy.org/download.html
-ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.12-linux64.tar.bz2
+ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2
 ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.9-linux64.tar.bz2
 ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.11-linux64.tar.bz2
-ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.12-linux64.tar.bz2
-ARG PYPY310=https://downloads.python.org/pypy/pypy3.10-v7.3.12-linux64.tar.bz2
+ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.13-linux64.tar.bz2
+ARG PYPY310=https://downloads.python.org/pypy/pypy3.10-v7.3.13-linux64.tar.bz2
 # Jython https://www.jython.org/download
 ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.3/jython-installer-2.7.3.jar
 
@@ -126,21 +127,6 @@ RUN \
   && python3.10 -m ensurepip \
   && python3.10 -m pip install -U $PACKAGES
 
-# Python3.12
-RUN \
-  cd ~ \
-  && wget $PYTHON312 \
-  && tar -xf Python*.tar.xz \
-  && cd Python* \
-  && ./configure --enable-optimizations --prefix=/usr/local \
-  && make \
-  && make altinstall \
-  && cd .. \
-  && rm -fr Python* \
-  && python3.12 -m ensurepip \
-  && python3.12 -m pip install -U $PACKAGES
-
-# The "stable" Python version is installed last, so that some of its tools are not replaced by non-stable ones.
 # Python3.11
 RUN \
   cd ~ \
@@ -155,6 +141,35 @@ RUN \
   && rm -fr Python* \
   && python3.11 -m ensurepip \
   && python3.11 -m pip install -U $PACKAGES
+
+## Python3.13
+#RUN \
+#  cd ~ \
+#  && wget $PYTHON313 \
+#  && tar -xf Python*.tar.xz \
+#  && cd Python* \
+#  && ./configure --enable-optimizations --prefix=/usr/local \
+#  && make \
+#  && make altinstall \
+#  && cd .. \
+#  && rm -fr Python* \
+#  && python3.13 -m ensurepip \
+#  && python3.13 -m pip install -U $PACKAGES
+
+# The "stable" Python version is installed last, so that some of its tools are not replaced by non-stable ones.
+# Python3.12
+RUN \
+  cd ~ \
+  && wget $PYTHON312 \
+  && tar -xf Python*.tar.xz \
+  && cd Python* \
+  && ./configure --enable-optimizations --prefix=/usr/local \
+  && make \
+  && make altinstall \
+  && cd .. \
+  && rm -fr Python* \
+  && python3.12 -m ensurepip \
+  && python3.12 -m pip install -U $PACKAGES
 
 
 ################################################################################
@@ -211,7 +226,9 @@ RUN \
   ln -s /usr/local/bin/pypy3.10 /usr/local/bin/pypy3
 
 RUN \
-  ln -s /opt/pypy2.7*/bin/pypy /usr/local/bin \
+     ln -s /opt/pypy2.7*/bin/pypy /usr/local/bin \
+  && ln -s /opt/pypy2.7*/bin/pypy2 /usr/local/bin \
+  && ln -s /opt/pypy2.7*/bin/pypy2.7 /usr/local/bin \
   && pypy -m ensurepip \
   && pypy -m pip install -U pip setuptools
 
@@ -253,8 +270,11 @@ RUN for bin in \
     python3.10 \
     python3.11 \
     python3.12 \
+    #python3.13 \
     jython \
     pypy \
+    pypy2 \
+    pypy2.7 \
     pypy3 \
     pypy3.7 \
     pypy3.8 \
