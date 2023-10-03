@@ -135,8 +135,7 @@ RUN \
   && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
-  # This is the stable Python version, hence `make install` instead of `make altinstall`. \
-  && make install \
+  && make altinstall \
   && cd .. \
   && rm -fr Python* \
   && python3.11 -m ensurepip \
@@ -165,7 +164,8 @@ RUN \
   && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
-  && make altinstall \
+  # This is the stable Python version, hence `make install` instead of `make altinstall`. \
+  && make install \
   && cd .. \
   && rm -fr Python* \
   && python3.12 -m ensurepip \
