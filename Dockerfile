@@ -141,19 +141,19 @@ RUN \
   && python3.11 -m ensurepip \
   && python3.11 -m pip install -U $PACKAGES
 
-## Python3.13
-#RUN \
-#  cd ~ \
-#  && wget $PYTHON313 \
-#  && tar -xf Python*.tar.xz \
-#  && cd Python* \
-#  && ./configure --enable-optimizations --prefix=/usr/local \
-#  && make \
-#  && make altinstall \
-#  && cd .. \
-#  && rm -fr Python* \
-#  && python3.13 -m ensurepip \
-#  && python3.13 -m pip install -U $PACKAGES
+# Python3.13
+RUN \
+  cd ~ \
+  && wget $PYTHON313 \
+  && tar -xf Python*.tar.xz \
+  && cd Python* \
+  && ./configure --enable-optimizations --prefix=/usr/local \
+  && make \
+  && make altinstall \
+  && cd .. \
+  && rm -fr Python* \
+  && python3.13 -m ensurepip \
+  && python3.13 -m pip install -U $PACKAGES
 
 # The "stable" Python version is installed last, so that some of its tools are not replaced by non-stable ones.
 # Python3.12
@@ -270,7 +270,7 @@ RUN for bin in \
     python3.10 \
     python3.11 \
     python3.12 \
-    #python3.13 \
+    python3.13 \
     jython \
     pypy \
     pypy2 \

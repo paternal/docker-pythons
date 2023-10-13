@@ -23,7 +23,8 @@ This image is Debian stable, with the following Python versions compiled from so
   3.9,
   3.10,
   3.11,
-  3.12.
+  3.12,
+  3.13.
 - [Pypy](https://www.pypy.org/download.html):
   2.7,
   3.7,
