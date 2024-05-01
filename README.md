@@ -35,6 +35,7 @@ This image is Debian stable, with the following Python versions compiled from so
   2.7.
 - Some python packages are installed using pip3:
   [black](https://pypi.python.org/pypi/black)
+  [build](https://pypi.python.org/pypi/build)
   [coverage](https://pypi.python.org/pypi/coverage)
   [pycodestyle](https://pypi.python.org/pypi/pycodestyle)
   [pylint](https://pypi.python.org/pypi/pylint)

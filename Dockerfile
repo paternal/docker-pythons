@@ -252,6 +252,7 @@ RUN \
 # https://pythonspeed.com/articles/externally-managed-environment-pep-668/
 RUN python3 -m pip install \
   black \
+  build \
   coverage \
   pycodestyle \
   pylint \
