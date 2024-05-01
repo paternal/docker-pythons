@@ -17,7 +17,6 @@ This image is Debian stable, with the following Python versions compiled from so
 
 - [Python](https://www.python.org/downloads/):
   2.7,
-  3.6,
   3.7,
   3.8,
   3.9,
