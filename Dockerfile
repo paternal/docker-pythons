@@ -5,12 +5,12 @@ LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 # Python https://www.python.org/downloads/source/
 ARG PYTHON27=https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz
 ARG PYTHON37=https://www.python.org/ftp/python/3.7.17/Python-3.7.17.tar.xz
-ARG PYTHON38=https://www.python.org/ftp/python/3.8.19/Python-3.8.19.tar.xz
-ARG PYTHON39=https://www.python.org/ftp/python/3.9.19/Python-3.9.19.tar.xz
-ARG PYTHON310=https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tar.xz
-ARG PYTHON311=https://www.python.org/ftp/python/3.11.9/Python-3.11.9.tar.xz
-ARG PYTHON312=https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tar.xz
-ARG PYTHON313=https://www.python.org/ftp/python/3.13.0/Python-3.13.0rc1.tar.xz
+ARG PYTHON38=https://www.python.org/ftp/python/3.8.20/Python-3.8.20.tar.xz
+ARG PYTHON39=https://www.python.org/ftp/python/3.9.20/Python-3.9.20.tar.xz
+ARG PYTHON310=https://www.python.org/ftp/python/3.10.15/Python-3.10.15.tar.xz
+ARG PYTHON311=https://www.python.org/ftp/python/3.11.10/Python-3.11.10.tar.xz
+ARG PYTHON312=https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tar.xz
+ARG PYTHON313=https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tar.xz
 # Pypy https://www.pypy.org/download.html
 ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.17-linux64.tar.bz2
 ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.9-linux64.tar.bz2
@@ -18,7 +18,7 @@ ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.11-linux64.tar.bz2
 ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.16-linux64.tar.bz2
 ARG PYPY310=https://downloads.python.org/pypy/pypy3.10-v7.3.17-linux64.tar.bz2
 # Jython https://www.jython.org/download
-ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.3/jython-installer-2.7.3.jar
+ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.4/jython-installer-2.7.4.jar
 
 # Packages installed for every python version
 ARG PACKAGES="pip wheel setuptools"
@@ -141,21 +141,6 @@ RUN \
   && python3.11 -m ensurepip \
   && python3.11 -m pip install -U $PACKAGES
 
-# Python3.13
-RUN \
-  cd ~ \
-  && wget $PYTHON313 \
-  && tar -xf Python*.tar.xz \
-  && cd Python* \
-  && ./configure --enable-optimizations --prefix=/usr/local \
-  && make \
-  && make altinstall \
-  && cd .. \
-  && rm -fr Python* \
-  && python3.13 -m ensurepip \
-  && python3.13 -m pip install -U $PACKAGES
-
-# The "stable" Python version is installed last, so that some of its tools are not replaced by non-stable ones.
 # Python3.12
 RUN \
   cd ~ \
@@ -164,12 +149,27 @@ RUN \
   && cd Python* \
   && ./configure --enable-optimizations --prefix=/usr/local \
   && make \
-  # This is the stable Python version, hence `make install` instead of `make altinstall`. \
-  && make install \
+  && make altinstall \
   && cd .. \
   && rm -fr Python* \
   && python3.12 -m ensurepip \
   && python3.12 -m pip install -U $PACKAGES
+
+# The "stable" Python version is installed last, so that some of its tools are not replaced by non-stable ones.
+# Python3.13
+RUN \
+  cd ~ \
+  && wget $PYTHON313 \
+  && tar -xf Python*.tar.xz \
+  && cd Python* \
+  && ./configure --enable-optimizations --prefix=/usr/local \
+  && make \
+  # This is the stable Python version, hence `make install` instead of `make altinstall`. \
+  && make install \
+  && cd .. \
+  && rm -fr Python* \
+  && python3.13 -m ensurepip \
+  && python3.13 -m pip install -U $PACKAGES
 
 
 ################################################################################
