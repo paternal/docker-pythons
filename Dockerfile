@@ -6,19 +6,19 @@ LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 ARG PYTHON27=https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz
 ARG PYTHON37=https://www.python.org/ftp/python/3.7.17/Python-3.7.17.tar.xz
 ARG PYTHON38=https://www.python.org/ftp/python/3.8.20/Python-3.8.20.tar.xz
-ARG PYTHON39=https://www.python.org/ftp/python/3.9.21/Python-3.9.21.tar.xz
-ARG PYTHON310=https://www.python.org/ftp/python/3.10.16/Python-3.10.16.tar.xz
-ARG PYTHON311=https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tar.xz
-ARG PYTHON312=https://www.python.org/ftp/python/3.12.9/Python-3.12.9.tar.xz
-ARG PYTHON313=https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tar.xz
-ARG PYTHON314=https://www.python.org/ftp/python/3.14.0/Python-3.14.0a5.tar.xz
+ARG PYTHON39=https://www.python.org/ftp/python/3.9.22/Python-3.9.22.tar.xz
+ARG PYTHON310=https://www.python.org/ftp/python/3.10.17/Python-3.10.17.tar.xz
+ARG PYTHON311=https://www.python.org/ftp/python/3.11.12/Python-3.11.12.tar.xz
+ARG PYTHON312=https://www.python.org/ftp/python/3.12.10/Python-3.12.10.tar.xz
+ARG PYTHON313=https://www.python.org/ftp/python/3.13.3/Python-3.13.3.tar.xz
+ARG PYTHON314=https://www.python.org/ftp/python/3.14.0/Python-3.14.0a7.tar.xz
 # Pypy https://www.pypy.org/download.html
-ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.18-linux64.tar.bz2
+ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.19-linux64.tar.bz2
 ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.9-linux64.tar.bz2
 ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.11-linux64.tar.bz2
 ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.16-linux64.tar.bz2
-ARG PYPY310=https://downloads.python.org/pypy/pypy3.10-v7.3.18-linux64.tar.bz2
-ARG PYPY311=https://downloads.python.org/pypy/pypy3.11-v7.3.18-linux64.tar.bz2
+ARG PYPY310=https://downloads.python.org/pypy/pypy3.10-v7.3.19-linux64.tar.bz2
+ARG PYPY311=https://downloads.python.org/pypy/pypy3.11-v7.3.19-linux64.tar.bz2
 # Jython https://www.jython.org/download
 ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.4/jython-installer-2.7.4.jar
 
