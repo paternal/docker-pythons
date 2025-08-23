@@ -10,8 +10,8 @@ ARG PYTHON39=https://www.python.org/ftp/python/3.9.23/Python-3.9.23.tar.xz
 ARG PYTHON310=https://www.python.org/ftp/python/3.10.18/Python-3.10.18.tar.xz
 ARG PYTHON311=https://www.python.org/ftp/python/3.11.13/Python-3.11.13.tar.xz
 ARG PYTHON312=https://www.python.org/ftp/python/3.12.11/Python-3.12.11.tar.xz
-ARG PYTHON313=https://www.python.org/ftp/python/3.13.5/Python-3.13.5.tar.xz
-ARG PYTHON314=https://www.python.org/ftp/python/3.14.0/Python-3.14.0rc1.tar.xz
+ARG PYTHON313=https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tar.xz
+ARG PYTHON314=https://www.python.org/ftp/python/3.14.0/Python-3.14.0rc2.tar.xz
 # Pypy https://www.pypy.org/download.html
 ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.20-linux64.tar.bz2
 ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.9-linux64.tar.bz2
@@ -39,14 +39,12 @@ RUN \
     libffi-dev \
     libgdbm-compat-dev \
     libgdbm-dev \
-    liblzma-dev \
     libncurses5-dev \
     libnss3-dev \
     libreadline6-dev \
     libsqlite3-dev \
     libssl-dev \
     lzma \
-    lzma-dev \
     pkg-config \
     tk-dev \
     uuid-dev \
@@ -259,7 +257,7 @@ RUN \
 ################################################################################
 # Jython
 RUN \
-  apt update --yes && apt install --yes openjdk-17-jre \
+  apt update --yes && apt install --yes default-jre \
   && rm -rf /var/lib/apt/lists/* \
   && cd ~ \
   && wget $JYTHON \
