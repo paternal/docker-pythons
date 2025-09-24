@@ -5,7 +5,7 @@ set -e
 cd $(dirname $0)
 
 # Build image
-docker build -t paternal/pythons .
+docker build --tag paternal/pythons --progress plain .
 
 # Push image to Docker Hub
 docker push paternal/pythons
