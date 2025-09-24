@@ -34,6 +34,12 @@ This image is Debian stable, with the following Python versions compiled from so
   3.11.
 - [Jython](https://www.jython.org/download):
   2.7.
+- [MicroPython](https://micropython.org):
+  1.26.
+- Even more Python implementations, installed from [Pypi](https://pypi.org/project):
+  - [Cython](https://cython.org)
+  - [Numba](https://numba.pydata.org)
+  - [Nuitka](https://nuitka.net)
 - Some python packages are installed using pip3:
   [black](https://pypi.python.org/pypi/black)
   [build](https://pypi.python.org/pypi/build)

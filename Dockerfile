@@ -21,6 +21,8 @@ ARG PYPY310=https://downloads.python.org/pypy/pypy3.10-v7.3.19-linux64.tar.bz2
 ARG PYPY311=https://downloads.python.org/pypy/pypy3.11-v7.3.20-linux64.tar.bz2
 # Jython https://www.jython.org/download
 ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.4/jython-installer-2.7.4.jar
+# Micropython
+ARG MICROPYTHON=https://micropython.org/resources/source/micropython-1.26.1.tar.xz
 
 # Packages installed for every python version
 ARG PACKAGES="pip wheel setuptools"
@@ -266,6 +268,24 @@ RUN \
   && ln -s /opt/jython/bin/jython /usr/local/bin/
 
 ################################################################################
+# Micropython
+RUN \
+  cd ~ \
+  && wget $MICROPYTHON \
+  && tar -xf micropython*.tar.xz \
+  && rm micropython*.tar.xz \
+  && cd micropython*/ports/unix \
+  && make \
+  && make install
+
+################################################################################
+# More python implementations
+RUN python3 -m pip install \
+  cython \
+  nuitka \
+  numba
+
+################################################################################
 # Install python3 packages
 
 # When PEP 668 strikes, use `pip install --break-system-packages`
@@ -304,6 +324,10 @@ RUN for bin in \
     pypy3.8 \
     pypy3.9 \
     pypy3.10 \
+    cython \
+    nuitka \
+    numba \
+    micropython \
     black \
     coverage \
     pip \
