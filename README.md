@@ -38,7 +38,6 @@ This image is Debian stable, with the following Python versions compiled from so
   1.26.
 - Even more Python implementations, installed from [Pypi](https://pypi.org/project):
   - [Cython](https://cython.org)
-  - [Numba](https://numba.pydata.org)
   - [Nuitka](https://nuitka.net)
 - Some python packages are installed using pip3:
   [black](https://pypi.python.org/pypi/black)

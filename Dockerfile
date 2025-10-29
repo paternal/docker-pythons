@@ -297,8 +297,7 @@ RUN \
 # More python implementations
 RUN python3 -m pip install \
   cython \
-  nuitka \
-  numba
+  nuitka
 
 ################################################################################
 # Install python3 packages
@@ -342,7 +341,6 @@ RUN for bin in \
     pypy3.11 \
     cython \
     nuitka \
-    numba \
     micropython \
     black \
     coverage \
