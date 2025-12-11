@@ -57,4 +57,4 @@ However, if a new version of whatever binary is installed here is available, and
 ## Usage
 
     sudo docker pull paternal/pythons
-    sudo docker run -i -t paternal/pythons /bin/bash
+    sudo docker run -i -t paternal/pythons

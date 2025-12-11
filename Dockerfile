@@ -355,3 +355,5 @@ RUN for bin in \
     echo "# $bin --version"; \
     $bin --version 2>&1; \
   done
+
+ENTRYPOINT /bin/bash
