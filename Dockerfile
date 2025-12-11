@@ -291,7 +291,9 @@ RUN \
   && rm micropython*.tar.xz \
   && cd micropython*/ports/unix \
   && make \
-  && make install
+  && make install \
+  && cd ../../.. \
+  && rm -fr micropython*
 
 ################################################################################
 # More python implementations
