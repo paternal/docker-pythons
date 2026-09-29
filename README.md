@@ -32,11 +32,12 @@ This image is Debian stable, with the following Python versions compiled from so
   3.8,
   3.9,
   3.10,
+  3.11,
   3.11.
 - [Jython](https://www.jython.org/download):
   2.7.
 - [MicroPython](https://micropython.org):
-  1.27.
+  1.29.
 - Even more Python implementations, installed from [Pypi](https://pypi.org/project):
   - [Cython](https://cython.org)
   - [Nuitka](https://nuitka.net)

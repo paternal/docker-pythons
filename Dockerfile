@@ -7,23 +7,24 @@ ARG PYTHON27=https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz
 ARG PYTHON37=https://www.python.org/ftp/python/3.7.17/Python-3.7.17.tar.xz
 ARG PYTHON38=https://www.python.org/ftp/python/3.8.20/Python-3.8.20.tar.xz
 ARG PYTHON39=https://www.python.org/ftp/python/3.9.25/Python-3.9.25.tar.xz
-ARG PYTHON310=https://www.python.org/ftp/python/3.10.20/Python-3.10.20.tar.xz
-ARG PYTHON311=https://www.python.org/ftp/python/3.11.15/Python-3.11.15.tar.xz
-ARG PYTHON312=https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tar.xz
-ARG PYTHON313=https://www.python.org/ftp/python/3.13.12/Python-3.13.12.tar.xz
-ARG PYTHON314=https://www.python.org/ftp/python/3.14.3/Python-3.14.3.tar.xz
-ARG PYTHON315=https://www.python.org/ftp/python/3.15.0/Python-3.15.0a6.tar.xz
+ARG PYTHON310=https://www.python.org/ftp/python/3.10.21/Python-3.10.21.tar.xz
+ARG PYTHON311=https://www.python.org/ftp/python/3.11.16/Python-3.11.16.tar.xz
+ARG PYTHON312=https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tar.xz
+ARG PYTHON313=https://www.python.org/ftp/python/3.13.15/Python-3.13.15.tar.xz
+ARG PYTHON314=https://www.python.org/ftp/python/3.14.7/Python-3.14.7.tar.xz
+ARG PYTHON315=https://www.python.org/ftp/python/3.15.0/Python-3.15.0rc2.tar.xz
 # Pypy https://www.pypy.org/download.html
-ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v7.3.20-linux64.tar.bz2
+ARG PYPY27=https://downloads.python.org/pypy/pypy2.7-v8.0.0-linux64.tar.gz
 ARG PYPY37=https://downloads.python.org/pypy/pypy3.7-v7.3.9-linux64.tar.bz2
 ARG PYPY38=https://downloads.python.org/pypy/pypy3.8-v7.3.11-linux64.tar.bz2
 ARG PYPY39=https://downloads.python.org/pypy/pypy3.9-v7.3.16-linux64.tar.bz2
 ARG PYPY310=https://downloads.python.org/pypy/pypy3.10-v7.3.19-linux64.tar.bz2
-ARG PYPY311=https://downloads.python.org/pypy/pypy3.11-v7.3.20-linux64.tar.bz2
+ARG PYPY311=https://downloads.python.org/pypy/pypy3.11-v8.0.0-linux64.tar.gz
+ARG PYPY312=https://downloads.python.org/pypy/pypy3.12-v8.0.0-linux64.tar.gz
 # Jython https://www.jython.org/download
 ARG JYTHON=https://repo1.maven.org/maven2/org/python/jython-installer/2.7.4/jython-installer-2.7.4.jar
-# Micropython
-ARG MICROPYTHON=https://micropython.org/resources/source/micropython-1.27.0.tar.xz
+# Micropython https://micropython.org/download
+ARG MICROPYTHON=https://micropython.org/resources/source/micropython-1.29.0.tar.xz
 
 # Packages installed for every python version
 ARG PACKAGES="pip wheel setuptools"
@@ -210,8 +211,8 @@ RUN \
 RUN \
   cd ~ \
   && wget $PYPY27 \
-  && tar -xf pypy*bz2 \
-  && rm pypy*bz2 \
+  && tar -xf pypy*gz \
+  && rm pypy*gz \
   && mv pypy* /opt
 
 # Pypy3.7
@@ -250,19 +251,27 @@ RUN \
 RUN \
   cd ~ \
   && wget $PYPY311 \
-  && tar -xf pypy*bz2 \
-  && rm pypy*bz2 \
+  && tar -xf pypy*gz \
+  && rm pypy*gz \
+  && mv pypy* /opt
+
+# Pypy3.11
+RUN \
+  cd ~ \
+  && wget $PYPY312 \
+  && tar -xf pypy*gz \
+  && rm pypy*gz \
   && mv pypy* /opt
 
 # Pypy symlinks
 RUN \
-  for version in 3.7 3.8 3.9 3.10 3.11; \
+  for version in 3.7 3.8 3.9 3.10 3.11 3.12; \
   do \
     ln -s /opt/pypy${version}*/bin/pypy${version} /usr/local/bin; \
     pypy${version} -m ensurepip; \
     pypy${version} -m pip install -U pip setuptools; \
   done; \
-  ln -s /usr/local/bin/pypy3.11 /usr/local/bin/pypy3
+  ln -s /usr/local/bin/pypy3.12 /usr/local/bin/pypy3
 
 RUN \
      ln -s /opt/pypy2.7*/bin/pypy /usr/local/bin \
@@ -331,6 +340,7 @@ RUN for bin in \
     python3.12 \
     python3.13 \
     python3.14 \
+    python3.15 \
     jython \
     pypy \
     pypy2 \
@@ -341,6 +351,7 @@ RUN for bin in \
     pypy3.9 \
     pypy3.10 \
     pypy3.11 \
+    pypy3.12 \
     cython \
     nuitka \
     micropython \
