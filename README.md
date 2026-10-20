@@ -17,7 +17,8 @@ This image is Debian stable, with the following Python versions compiled from so
   3.12,
   3.13,
   3.14,
-  3.15.
+  3.15,
+  3.16.
 - [Pypy](https://www.pypy.org/download.html):
   2.7,
   3.7,
@@ -25,7 +26,7 @@ This image is Debian stable, with the following Python versions compiled from so
   3.9,
   3.10,
   3.11,
-  3.11.
+  3.12.
 - [Jython](https://www.jython.org/download):
   2.7.
 - [MicroPython](https://micropython.org):
